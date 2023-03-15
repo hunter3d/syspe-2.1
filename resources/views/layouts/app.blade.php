@@ -12,7 +12,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="bg-light pb-5">
-<x-navbar/>
+{{--<x-navbar/>--}}
 <x-navbar.search/>
 <div class="container-fluid bd-layout">
     <x-sidebar/>
