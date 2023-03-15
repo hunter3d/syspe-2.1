@@ -6,18 +6,18 @@ return [
     spec columns
     */
     'columns'                       => [
-        'alpha'   => [
-            'rows'  => ['description', 'email', 'name', 'slug'],
-            'class' => 'fa fa-sort-alpha',
-        ],
-        'amount'  => [
-            'rows'  => ['amount', 'price'],
-            'class' => 'fa fa-sort-amount',
-        ],
-        'numeric' => [
-            'rows'  => ['created_at', 'updated_at', 'level', 'id', 'phone_number'],
-            'class' => 'fa fa-sort-numeric',
-        ],
+//        'alpha'   => [
+//            'rows'  => ['description', 'email', 'name', 'slug'],
+//            'class' => 'fal fa-fw fa-sort-alpha',
+//        ],
+//        'amount'  => [
+//            'rows'  => ['amount', 'price'],
+//            'class' => 'fal fa-fw fa-sort-amount',
+//        ],
+//        'numeric' => [
+//            'rows'  => ['created_at', 'updated_at', 'level', 'id', 'phone_number'],
+//            'class' => 'fal fa-fw fa-sort-numeric',
+//        ],
     ],
 
     /*
@@ -28,12 +28,12 @@ return [
     /*
     defines icon set to use when sorted data is none above (alpha nor amount nor numeric)
      */
-    'default_icon_set'              => 'fa fa-sort',
+    'default_icon_set'              => 'text-primary fad fa-sort',
 
     /*
     icon that shows when generating sortable link while column is not sorted
      */
-    'sortable_icon'                 => 'fa fa-sort',
+    'sortable_icon'                 => 'text-secondary fal fa-sort',
 
     /*
     generated icon is clickable non-clickable (default)
@@ -49,17 +49,17 @@ return [
     /*
     suffix class that is appended when ascending direction is applied
      */
-    'asc_suffix'                    => '-asc',
+    'asc_suffix'                    => '-up',
 
     /*
     suffix class that is appended when descending direction is applied
      */
-    'desc_suffix'                   => '-desc',
+    'desc_suffix'                   => '-down',
 
     /*
     default anchor class, if value is null none is added
      */
-    'anchor_class'                  => null,
+    'anchor_class'                  => 'text-decoration-none',//null,
 
     /*
     default active anchor class, if value is null none is added
