@@ -46,38 +46,38 @@ use App\Models\User;
 //    }
 //}
 //
-//if (!function_exists('getEmailById'))
-//{
-//    function getEmailById( $id ) {
-//        if ( $id && $id > 0 )
-//        {
-//            $user = User::find( $id );
-//            if ($user)
-//                return $user->email;
-//            else
-//                return '--- not defined ---';
-//        } else {
-//            return '';
-//        }
-//    }
-//}
-//
-//if (!function_exists('getFioById'))
-//{
-//    function getFioById( $id )
-//    {
-//        if ( $id && $id>0 )
-//        {
-//            $user = User::find($id);
-//            if ($user)
-//                return $user->last_name.' '.Str::substr($user->first_name,0,1).'.';
-//            else
-//                return '--- card not found ---';
-//        } else {
-//            return 'не указан(а)';
-//        }
-//    }
-//}
+if (!function_exists('getEmailById'))
+{
+    function getEmailById( $id ) {
+        if ( $id && $id > 0 )
+        {
+            $user = User::find( $id );
+            if ($user)
+                return $user->email;
+            else
+                return '--- not defined ---';
+        } else {
+            return '';
+        }
+    }
+}
+
+if (!function_exists('getFioById'))
+{
+    function getFioById( $id )
+    {
+        if ( $id && $id>0 )
+        {
+            $user = User::find($id);
+            if ($user)
+                return $user->last_name.' '.Str::substr($user->first_name,0,1).'.';
+            else
+                return '--- card not found ---';
+        } else {
+            return 'не указан(а)';
+        }
+    }
+}
 
 //if (!function_exists('userLog'))
 //{
