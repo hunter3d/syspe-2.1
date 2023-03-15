@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run() {
-        $users = User::connection('mysql_old')->get();
+        $users = DB::connection('mysql_old')->table('users')->get();
         foreach ($users as $user) {
             $usr = User::create([
                 'email' => $user->email,

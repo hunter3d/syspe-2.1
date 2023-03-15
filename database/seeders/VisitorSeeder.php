@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Visitor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class VisitorSeeder extends Seeder
@@ -16,7 +17,7 @@ class VisitorSeeder extends Seeder
      */
     public function run()
     {
-        $vvv = Visitor::connect('mysql_old')->get();
+        $vvv = DB::connection('mysql_old')->table('visitors')->get();
 
         foreach ($vvv as $v) {
             // Add default visitor
@@ -27,7 +28,5 @@ class VisitorSeeder extends Seeder
                 'is_blocked'    => 0,
             ]);
         }
-
-        // Add visitor card
     }
 }
