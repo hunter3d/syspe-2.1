@@ -5,3 +5,109 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+// Color system
+$white:    #fff !default;
+$gray-100: #eceff1 !default;
+$gray-200: #cfd8dc !default;
+$gray-300: #b0bec5 !default;
+$gray-400: #90a4ae !default;
+$gray-500: #78909c !default;
+$gray-600: #607d8b !default;
+$gray-700: #546e7a !default;
+$gray-800: #455a64 !default;
+$gray-900: #37474f !default;
+$gray-1000: #263228 !default;
+$black:    #000 !default;
+
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900,
+    "1000": $gray-1000
+) !default;
+
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+$itks-primary:          #0d47a1;
+$itks-primary-light:    #5472d3;
+$itks-primary-dark:     #002171;
+$itks-secondary:        #b0bec5;
+$itks-secondary-light:  #e2f1f8;
+$itks-secondary-dark:   #808e95;
+
+
+$colors: (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800,
+    "itks-primary":             $itks-primary,
+    "itks-primary-light":       $itks-primary-light,
+    "itks-primary-dark":        $itks-primary-dark,
+    "itks-secondary":           $itks-secondary,
+    "itks-secondary-light":     $itks-secondary-light,
+    "itks-secondary-dark":      $itks-secondary-dark,
+
+) !default;
+
+$primary:       $itks-primary !default;
+$secondary:     $itks-secondary !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "itks-primary":             $itks-primary,
+    "itks-primary-light":       $itks-primary-light,
+    "itks-primary-dark":        $itks-primary-dark,
+    "itks-secondary":           $itks-secondary,
+    "itks-secondary-light":     $itks-secondary-light,
+    "itks-secondary-dark":      $itks-secondary-dark,
+) !default;
+
+$breadcrumb-font-size:              .75rem;
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-item-padding-x:         .5rem;
+$breadcrumb-margin-bottom:          1rem;
+$breadcrumb-bg:                     null;
+$breadcrumb-divider-color:          $black;
+$breadcrumb-active-color:           $gray-700;
+$breadcrumb-divider:                quote("/");
+$breadcrumb-divider-flipped:        $breadcrumb-divider;
+$breadcrumb-border-radius:          null;
