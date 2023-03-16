@@ -9,6 +9,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Spatie\Activitylog\Contracts\Activity as ActivityContract;
 use Kyslik\ColumnSortable\Sortable;
+use Laravel\Scout\Searchable;
 
 /**
  * Spatie\Activitylog\Models\Activity.
@@ -41,7 +42,7 @@ use Kyslik\ColumnSortable\Sortable;
  */
 class Activity extends Model implements ActivityContract
 {
-    use Sortable;
+    use Sortable, Searchable;
 
     public $sortable = [
         'id',
@@ -62,6 +63,15 @@ class Activity extends Model implements ActivityContract
     protected $casts = [
         'properties' => 'collection',
     ];
+
+    public function toSearchableArray(): array
+    {
+        $array = $this->toArray();
+
+        // Customize the data array...
+
+        return $array;
+    }
 
     public function __construct(array $attributes = [])
     {
