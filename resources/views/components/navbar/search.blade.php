@@ -4,6 +4,7 @@
         <div class="input-group">
             <select name="model" class="form-select" id="inputGroupSelect01" style="max-width: 140px;">
                 <option value="cards">Карточки</option>
+                <option value="logs">Логи</option>
             </select>
             <input name="query" class="form-control" type="search" placeholder="Поиск" aria-label="Поиск"  aria-describedby="searchHelp">
             <button class="btn btn-primary" type="submit">Найти</button>
