@@ -120,8 +120,8 @@
                 </button>
                 <div class="collapse" id="admin-collapse">
                     <ul class="list-unstyled fw-normal pb-1 small">
-{{--                        @can('staff')<li><a href="/config/staff" class="d-inline-flex align-items-center rounded"><i class="fal fa-fw fa-users"></i>&nbsp;<span>Персонал</span></a></li>@endcan--}}
-{{--                        @can('roles')<li><a href="/config/roles" class="d-inline-flex align-items-center rounded"><i class="fal fa-fw fa-shield-check"></i>&nbsp;<span>Роли</span></a></li>@endcan--}}
+                        @can('staff')<li><a href="/config/staff" class="d-inline-flex align-items-center rounded"><i class="fal fa-fw fa-users"></i>&nbsp;<span>Персонал</span></a></li>@endcan
+                        @can('roles')<li><a href="/config/roles" class="d-inline-flex align-items-center rounded"><i class="fal fa-fw fa-shield-check"></i>&nbsp;<span>Роли</span></a></li>@endcan
                         @can('logs')<li><a href="/config/logs" class="d-inline-flex align-items-center rounded"><i class="fal fa-fw fa-file-alt"></i>&nbsp;<span>Логи</span></a></li>@endcan
                     </ul>
                 </div>

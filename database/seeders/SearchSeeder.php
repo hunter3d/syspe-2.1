@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class SearchSeeder extends Seeder
@@ -19,7 +20,9 @@ class SearchSeeder extends Seeder
     public function run()
     {
         $role = Role::findByName('Developer');
-        $role->givePermissionTo('search cards');
-        $role->givePermissionTo('search logs');
+        $perm = Permission::create(['name'=>'search cards']);
+        $role->givePermissionTo($perm);
+        $perm = Permission::create(['name'=>'search logs']);
+        $role->givePermissionTo($perm);
     }
 }

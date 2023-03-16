@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Config\LogsController;
+use App\Http\Controllers\Config\RolesController;
+use App\Http\Controllers\Config\StaffController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +45,46 @@ Route::prefix('config')->group(function () {
         ->middleware('auth')
         ->middleware('allow:logs')
         ->name('logs.name');
+    // STAFF
+    Route::get('/staff', [StaffController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:staff')
+        ->name('staff');
+    Route::get('/staff/add', [StaffController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:staff create');
+    Route::post('/staff/add', [StaffController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:staff store');
+    Route::get('/staff/edit/{id}', [StaffController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:staff edit');
+    Route::post('/staff/edit/{id}', [StaffController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:staff update');
+    Route::get('/staff/block/{id}', [StaffController::class, 'block'])
+        ->middleware('auth')
+        ->middleware('allow:staff block');
+    // ROLES
+    Route::get('/roles', [RolesController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:roles')
+        ->name('roles');
+    Route::get('/roles/add', [RolesController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:roles create');
+    Route::post('/roles/add', [RolesController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:roles store');
+    Route::get('/roles/edit/{id}', [RolesController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:roles destroy');
+    Route::post('/roles/edit/{id}', [RolesController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:roles update');
+    Route::get('/roles/delete/{id}', [RolesController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:roles destroy');
 });
 
 // SEARCH

@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class TextsSeeder extends Seeder
@@ -19,9 +20,13 @@ class TextsSeeder extends Seeder
     public function run()
     {
         $role = Role::findByName('Developer');
-        $role->givePermissionTo('texts');
-        $role->givePermissionTo('texts create');
-        $role->givePermissionTo('texts update');
-        $role->givePermissionTo('texts destroy');
+        $perm = Permission::create(['name'=>'texts']);
+        $role->givePermissionTo($perm);
+        $perm = Permission::create(['name'=>'texts create']);
+        $role->givePermissionTo($perm);
+        $perm = Permission::create(['name'=>'texts update']);
+        $role->givePermissionTo($perm);
+        $perm = Permission::create(['name'=>'texts destroy']);
+        $role->givePermissionTo($perm);
     }
 }
