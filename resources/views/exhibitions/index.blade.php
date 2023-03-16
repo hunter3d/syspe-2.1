@@ -5,6 +5,9 @@
                 <h1 class="h3 mb-3"><i class="fal fa-fw fa-copyright text-secondary"></i>&nbsp;Выставки</h1>
             </div>
             <div class="col-auto ms-auto text-end">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">
+                    <i class="fal fa-fw fa-backward"></i>
+                </a>
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFilter" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fal fa-fw fa-filter"></i> Статус
                 </button>
@@ -13,9 +16,6 @@
                     <li><a class="dropdown-item" href="{{ route('exhibitions',['status'=>0]) }}">Активные</a></li>
                     <li><a class="dropdown-item" href="{{ route('exhibitions',['status'=>1]) }}">Черновики</a></li>
                 </ul>
-                <a href="{{ route('dashboard') }}" class="btn btn-secondary">
-                    <i class="fal fa-fw fa-backward"></i>
-                </a>
                 <a href="/exhibitions/add" class="btn btn-primary">
                     <i class="fal fa-plus"></i>
                 </a>

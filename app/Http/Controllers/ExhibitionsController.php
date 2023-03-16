@@ -21,7 +21,6 @@ class ExhibitionsController extends Controller {
     }
 
     public function create() {
-
         return view( 'exhibitions.add' );
     }
 

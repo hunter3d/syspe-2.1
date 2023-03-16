@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ModelHasPermissionSeeder::class,
             ModelHasRolesSeeder::class,
             MessagesSeeder::class,
+            ExhibitionsSeeder::class,
         ]);
     }
 }
