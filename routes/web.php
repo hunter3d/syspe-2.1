@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Config\LogsController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,17 @@ Route::prefix('auth')->group(function () {
         ->middleware('guest');
     Route::get('/logout', [AuthController::class, 'destroy'])
         ->middleware('auth');
+});
+
+// CONFIG
+Route::prefix('config')->group(function () {
+    // LOGS
+    Route::get('/logs', [ LogsController::class, 'index' ])
+        ->middleware('auth')
+        ->middleware('allow:logs')
+        ->name('logs');
+    Route::get('/logs/name/{name}', [LogsController::class, 'name'])
+        ->middleware('auth')
+        ->middleware('allow:logs')
+        ->name('logs.name');
 });
