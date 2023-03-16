@@ -12,7 +12,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="bg-light pb-5">
-{{--<x-navbar/>--}}
+<x-navbar/>
 <x-navbar.search/>
 <div class="container-fluid bd-layout">
     <x-sidebar/>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="text-black-50">
-        <span class="navbar-text mr-auto"><small>&copy; PremierExpo <?= date( 'Y', time() ); ?></small></span>
+        <span class="navbar-text mr-auto"><small>&copy; PremierExpo System v2.1 2022-<?= date( 'Y', time() ); ?></small></span>
     </div>
 
     <a href="#" id="scroolToTop" class="p-1 align-items-center text-black-50">

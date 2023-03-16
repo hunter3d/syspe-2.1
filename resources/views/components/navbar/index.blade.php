@@ -3,7 +3,7 @@
         <x-navbar.toggler/>
 
         <a class="d-flex align-items-center justify-content-center mb-2" href="/">
-            <img src="/img/pe_white.svg" height="28" width="auto" alt="logo">
+            <img src="{{asset('img/pe_logo_light.svg')}}" height="20" width="auto" alt="logo">
         </a>
 
         <ul class="nav justify-content-end align-items-center">
