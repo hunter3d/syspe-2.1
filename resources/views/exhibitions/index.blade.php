@@ -41,7 +41,6 @@
                                 <th></th>
                                 <th></th>
                                 <th></th>
-{{--                                <th></th>--}}
                                 <th></th>
                                 <th></th>
                                 <th class="text-nowrap" scope="col">@sortablelink('template','Статус')</th>
@@ -59,7 +58,6 @@
                                     <td><a href="/events/exhibition/{{$ex->id}}" title="Мероприятия по выставке: {{$ex->name}}"><i class="fal fa-fw fa-calendar-check"></i></a></td>
                                     <td><a href="/topics/exhibition/{{$ex->id}}" title="Специализации по выставке: {{$ex->name}}"><i class="fal fa-fw fa-briefcase"></i></a></td>
                                     <td><a href="/questionnaires/exhibition/{{$ex->id}}" title="Опросники по выставке: {{$ex->name}}"><i class="fal fa-fw fa-check-square"></i></a></td>
-{{--                                    <td><a href="/promocodes/exhibition/{{$ex->id}}" title="Промокоды по выставке: {{$ex->name}}"><i class="fal fa-fw fa-brackets"></i></a></td>--}}
                                     <td><a href="/orders/exhibition/{{$ex->id}}" title="Заказы по выставке: {{$ex->name}}"><i class="fal fa-fw fa-shopping-cart"></i></a></td>
                                     <td><a href="/tickets/exhibition/{{$ex->id}}" title="Билеты по выставке: {{$ex->name}}"><i class="fal fa-fw fa-ticket"></i></a></td>
                                     <td class="{{$ex->template==0?'table-success':''}}">{{ $ex->template==0?'Активная':'Черновик' }}</td>
