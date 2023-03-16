@@ -43,3 +43,8 @@ Route::prefix('config')->group(function () {
         ->middleware('allow:logs')
         ->name('logs.name');
 });
+
+// SEARCH
+Route::post('/search',[\App\Http\Controllers\SearchController::class,'get'])
+    ->middleware('auth')
+    ->name('search');

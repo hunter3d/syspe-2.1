@@ -13,7 +13,7 @@ class SearchController extends Controller {
             return view( 'search.cards', $data );
         }
         if ( $request->input( 'model' ) == 'logs' ) {
-            $data['cards'] = Activity::search( $request->input( 'query' ) )->paginate( 25 );
+            $data['logs'] = Activity::search( $request->input( 'query' ) )->paginate( 25 );
             return view( 'search.logs', $data );
         }
         back();
