@@ -4,13 +4,13 @@
 namespace App\Http\Controllers\Config;
 
 use App\Http\Controllers\Controller;
-use Spatie\Activitylog\Models\Activity;
+use App\Models\Activity;
 
 class LogsController extends Controller
 {
-    public function index( $sort = 'all' )
+    public function index()
     {
-        $data['logs'] = Activity::orderBy('created_at', 'DESC')->paginate(50);
+        $data['logs'] = Activity::sortable()->orderBy('created_at', 'DESC')->paginate(50);
         $data['total'] = $data['logs']->total();
         $data['log_names'] = Activity::select('log_name')->groupBy('log_name')->orderBy('log_name')->get();
         return view('config.logs.index', $data);
@@ -18,7 +18,7 @@ class LogsController extends Controller
 
     public function name( $name ) {
         $data['name'] = $name;
-        $data['logs'] = Activity::where('log_name',$name)->orderBy('created_at','DESC')->paginate(50);
+        $data['logs'] = Activity::sortable()->where('log_name',$name)->orderBy('created_at','DESC')->paginate(50);
         $data['total'] = $data['logs']->total();
         $data['log_names'] = Activity::select('log_name')->groupBy('log_name')->orderBy('log_name')->get();
         return view('config.logs.name', $data);

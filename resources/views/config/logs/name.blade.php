@@ -31,15 +31,15 @@
                         <table class="table table-striped table-sm">
                             <thead>
                             <tr>
-                                <th></th>
-                                <th>#</th>
-                                <th>time</th>
-                                <th>causer_id</th>
-                                <th>description</th>
-                                <th>subject_type</th>
-                                <th>event</th>
-                                <th>subject_id</th>
-                                <th>properties</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('log_name','LogName')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('created_at','time')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('causer_id','causer_id')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('description','description')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('subject_type','subject_type')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('event','event')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('subject_id','subject_id')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('properties','properties')</th>
                             </tr>
                             </thead>
                             <tbody>
