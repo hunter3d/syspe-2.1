@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Spatie\Activitylog\Contracts\Activity as ActivityContract;
+use Kyslik\ColumnSortable\Sortable;
 
 /**
  * Spatie\Activitylog\Models\Activity.
@@ -40,6 +41,22 @@ use Spatie\Activitylog\Contracts\Activity as ActivityContract;
  */
 class Activity extends Model implements ActivityContract
 {
+    use Sortable;
+
+    public $sortable = [
+        'id',
+        'log_name',
+        'description',
+        'subject_type',
+        'event',
+        'subject_id',
+        'causer_type',
+        'causer_id',
+        'properties',
+        'batch_uuid',
+        'created_at',
+        'updated_at',
+    ];
     public $guarded = [];
 
     protected $casts = [
