@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             SearchSeeder::class,
             EventsSeeder::class,
             ActivityLogSeeder::class,
+            CountriesSeeder::class,
         ]);
     }
 }
