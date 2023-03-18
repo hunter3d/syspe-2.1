@@ -45,9 +45,14 @@ class ExhibitionsFormRequest extends FormRequest {
                 $h = round( $this->input( 'crop_y2' ) * $scale ) - round( $this->input( 'crop_y1' ) * $scale );
                 $x = round( $this->input( 'crop_x1' ) * $scale );
                 $y = round( $this->input( 'crop_y1' ) * $scale );
-                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )->crop( $w, $h, $x, $y )->resize( 330, 330 )->save();
+                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )
+                    ->crop( $w, $h, $x, $y )
+                    ->resize( 330, 330 )
+                    ->save();
             } else {
-                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )->resize( 330, 330 )->save();
+                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )
+                    ->resize( 330, 330 )
+                    ->save();
             }
         } else {
             $logo_name = 'pe_exhibition_template.svg';
@@ -80,9 +85,14 @@ class ExhibitionsFormRequest extends FormRequest {
                 $h = round( $this->input( 'crop_y2' ) * $scale ) - round( $this->input( 'crop_y1' ) * $scale );
                 $x = round( $this->input( 'crop_x1' ) * $scale );
                 $y = round( $this->input( 'crop_y1' ) * $scale );
-                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )->crop( $w, $h, $x, $y )->resize( 150, 150 )->save();
+                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )
+                    ->crop( $w, $h, $x, $y )
+                    ->resize( 150, 150 )
+                    ->save();
             } else {
-                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )->resize( 150, 150 )->save();
+                $img = Image::make( public_path( $logo_path ) . '/' . $logo_name )
+                    ->resize( 150, 150 )
+                    ->save();
             }
         } else {
             $logo_name = $exhb->logo_name;
