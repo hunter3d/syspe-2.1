@@ -71,8 +71,7 @@ class EventsFormRequest extends FormRequest {
         return Auth::check();
     }
 
-    public function store()
-    {
+    public function store() {
         // Check logo
         if ( $this->file('logo') ) {
             $image = $this->file('logo');
@@ -158,8 +157,7 @@ class EventsFormRequest extends FormRequest {
         ]);
     }
 
-    public function update( $id )
-    {
+    public function update( $id ) {
         $ev = Events::find( $id );
         // Check logo
         if ( $this->file('logo') ) {
