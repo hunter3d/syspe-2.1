@@ -48,6 +48,8 @@ class EventsSeeder extends Seeder
                 'price_euro'        => 0,
                 'price_usd'         => 0,
                 'template'          => $event->template,
+                'created_at'        => $event->created_at,
+                'updated_at'        => $event->updated_at,
             ]);
         }
     }

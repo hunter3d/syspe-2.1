@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             TextsSeeder::class,
             SearchSeeder::class,
             EventsSeeder::class,
+            ActivityLogSeeder::class,
         ]);
     }
 }
