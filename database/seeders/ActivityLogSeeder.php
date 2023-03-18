@@ -19,6 +19,7 @@ class ActivityLogSeeder extends Seeder
     {
         $vvv = DB::connection('mysql_old')->table('activity_log')->get();
 
+        DB::connection('mysql')->table('activity_log')->delete();
         foreach ($vvv as $v) {
             DB::connection('mysql')->table('activity_log')->insert(get_object_vars($v));
         }
