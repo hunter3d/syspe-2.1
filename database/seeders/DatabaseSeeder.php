@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ExhibitionsSeeder::class,
             TextsSeeder::class,
             SearchSeeder::class,
+            EventsSeeder::class,
         ]);
     }
 }
