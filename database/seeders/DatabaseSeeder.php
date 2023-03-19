@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             EmailsSeeder::class,
             PhonesSeeder::class,
             RegionsSeeder::class,
+            TopicsSeeder::class,
         ]);
     }
 }
