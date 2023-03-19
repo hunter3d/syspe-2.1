@@ -6,15 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     public function up(): void {
-        Schema::create( 'mails', function ( Blueprint $table ) {
+        Schema::create( 'regions', function ( Blueprint $table ) {
             $table->id();
-            $table->bigInteger('card_id');
-            $table->string('email');
+            $table->string('name_uk');
+            $table->string('name_ru');
+            $table->string('name_en');
             $table->timestamps();
         } );
     }
 
     public function down(): void {
-        Schema::dropIfExists( 'mails' );
+        Schema::dropIfExists( 'regions' );
     }
 };

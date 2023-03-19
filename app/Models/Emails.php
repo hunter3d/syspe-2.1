@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Mails extends Model {
+class Emails extends Model {
     use HasFactory, LogsActivity;
 
     protected $fillable = [

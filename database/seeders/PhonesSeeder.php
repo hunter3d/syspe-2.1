@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class EmailsSeeder extends Seeder
+class PhonesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,10 +17,10 @@ class EmailsSeeder extends Seeder
      */
     public function run()
     {
-        $vvv = DB::connection('mysql_old')->table('cardmails')->get();
+        $vvv = DB::connection('mysql_old')->table('cardphones')->get();
 
         foreach ($vvv as $v) {
-            DB::connection('mysql')->table('emails')->insert(get_object_vars($v));
+            DB::connection('mysql')->table('phones')->insert(get_object_vars($v));
         }
     }
 }

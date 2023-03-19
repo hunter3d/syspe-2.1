@@ -30,6 +30,8 @@ class DatabaseSeeder extends Seeder
             CountriesSeeder::class,
             CommentsSeeder::class,
             EmailsSeeder::class,
+            PhonesSeeder::class,
+            RegionsSeeder::class,
         ]);
     }
 }
