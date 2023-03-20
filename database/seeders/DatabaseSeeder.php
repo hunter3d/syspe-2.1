@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Answers;
 use App\Models\Comments;
 use Illuminate\Database\Seeder;
 
@@ -33,6 +34,10 @@ class DatabaseSeeder extends Seeder
             PhonesSeeder::class,
             RegionsSeeder::class,
             TopicsSeeder::class,
+            EmailCodesSeeder::class,
+            QuestionnairesSeeder::class,
+            AnsweroptionsSeeder::class,
+            AnswersSeeder::class,
         ]);
     }
 }
