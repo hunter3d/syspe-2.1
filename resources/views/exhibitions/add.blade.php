@@ -39,6 +39,7 @@
                                 <div id="logoHelp" class="form-text">Логотип выставки в формате PNG или JPG. В пропорции 1х1.</div>
                             </div>
 
+
                             <script type="text/javascript" src="{{asset('js/jquery.Jcrop.min.js')}}"></script>
                             <link rel="stylesheet" href="{{ asset('css/jquery.Jcrop.css') }}">
                             <script>

@@ -9,8 +9,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <script src="{{ asset('js/jquery-3.6.1.min.js') }}"></script>
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="bg-light pb-5">
 <x-navbar/>
