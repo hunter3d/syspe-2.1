@@ -39,6 +39,8 @@ class DatabaseSeeder extends Seeder
             AnsweroptionsSeeder::class,
             AnswersSeeder::class,
             TicketsSeeder::class,
+            CardExhibitionSeeder::class,
+            CardsSeeder::class,
         ]);
     }
 }
