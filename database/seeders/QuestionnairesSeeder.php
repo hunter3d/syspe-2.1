@@ -28,9 +28,9 @@ class QuestionnairesSeeder extends Seeder
                 'id'                => $r->id,
                 'exhibition_id'     => $r->exhibition_id,
                 'type'              => $r->type,
-                'question_uk'       => $r->name_ua,
-                'question_ru'       => $r->name_ru,
-                'question_en'       => $r->name_en,
+                'question_uk'       => $r->question_ua,
+                'question_ru'       => $r->question_ru,
+                'question_en'       => $r->question_en,
                 'template'          => $r->template,
             ]);
         }
