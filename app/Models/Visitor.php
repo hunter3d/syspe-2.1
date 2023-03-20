@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Kyslik\ColumnSortable\Sortable;
@@ -73,10 +74,18 @@ class Visitor extends Authenticatable implements MustVerifyEmail
         return $this->hasOne( Card::class );
     }
 
-    //    public function order() {
-//        return $this->hasMany( Orders::class );
-//    }
-//    public function tickets() {
-//        return $this->hasMany( Tickets::class );
-//    }
+    public function order(): HasMany {
+        return $this->hasMany( Orders::class );
+    }
+    public function tickets(): HasMany {
+        return $this->hasMany( Tickets::class );
+    }
+
+    public function emailcode(): HasOne {
+        return $this->hasOne( Emailcodes::class );
+    }
+
+    public function answers(): HasMany {
+        return $this->hasMany( Answers::class );
+    }
 }

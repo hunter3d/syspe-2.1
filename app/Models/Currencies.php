@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Currencies extends Model
 {
@@ -14,4 +15,8 @@ class Currencies extends Model
         'name_uk',
         'name_en',
     ];
+
+    public function orders(): HasMany {
+        return $this->hasMany( Orders::class );
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Kyslik\ColumnSortable\Sortable;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -108,5 +109,17 @@ class Events extends Model {
 
     public function exhibition(): BelongsTo {
         return $this->belongsTo( Exhibition::class );
+    }
+
+    public function orders(): HasMany {
+        return $this->hasMany( Orders::class );
+    }
+
+    public function promocodes(): HasMany {
+        return $this->hasMany( Promocodes::class );
+    }
+
+    public function tickets(): HasMany {
+        return $this->hasMany( Tickets::class );
     }
 }

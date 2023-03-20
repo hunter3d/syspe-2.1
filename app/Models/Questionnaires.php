@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Kyslik\ColumnSortable\Sortable;
@@ -45,5 +47,13 @@ class Questionnaires extends Model
         'question_en',
         'template',
     ];
+
+    public function exhibition(): BelongsTo {
+        return $this->belongsTo( Exhibition::class );
+    }
+
+    public function answeroptions(): HasMany {
+        return $this->hasMany( Answeroptions::class );
+    }
 
 }

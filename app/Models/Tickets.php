@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Kyslik\ColumnSortable\Sortable;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -52,16 +53,16 @@ class Tickets extends Model
         'checked_at',
     ];
 
-    public function visitor() {
+    public function visitor(): BelongsTo {
         return $this->belongsTo( Visitor::class );
     }
-    public function exhibition() {
+    public function exhibition(): BelongsTo {
         return $this->belongsTo( Exhibition::class );
     }
-    public function event() {
-        return $this->belongsTo(Event::class);
+    public function event(): BelongsTo {
+        return $this->belongsTo(Events::class);
     }
-    public function order() {
+    public function order(): BelongsTo {
         return $this->belongsTo(Orders::class);
     }
 }

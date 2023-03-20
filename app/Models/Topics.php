@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Kyslik\ColumnSortable\Sortable;
 use Spatie\Activitylog\LogOptions;
@@ -44,5 +45,9 @@ class Topics extends Model {
 
     public function cards(): HasMany {
         return $this->hasMany( Cards::class );
+    }
+
+    public function exhibition(): BelongsTo {
+        return $this->belongsTo( Exhibition::class );
     }
 }

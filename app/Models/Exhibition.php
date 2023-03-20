@@ -61,21 +61,21 @@ class Exhibition extends Model
 //    public function cards(): HasMany {
 //        return $this->hasMany( Cards::class );
 //    }
-//    public function order() {
-//        return $this->hasMany(Orders::class);
-//    }
-//    public function tickets() {
-//        return $this->hasMany( Tickets::class );
-//    }
-//    public function questionnaires() {
-//        return $this->hasMany( Questionnaires::class);
-//    }
-//    public function cardtopic() {
-//        return $this->hasMany( Cardtopic::class);
-//    }
-//    public function answers() {
-//        return $this->hasMany( Answers::class);
-//    }
+    public function orders(): HasMany {
+        return $this->hasMany(Orders::class);
+    }
+    public function tickets(): HasMany {
+        return $this->hasMany( Tickets::class );
+    }
+    public function questionnaires() {
+        return $this->hasMany( Questionnaires::class );
+    }
+    public function topics() {
+        return $this->hasMany( Topics::class);
+    }
+    public function answers() {
+        return $this->hasMany( Answers::class);
+    }
 }
 
 // rebuild Scout index

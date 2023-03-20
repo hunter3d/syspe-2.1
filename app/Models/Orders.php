@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Kyslik\ColumnSortable\Sortable;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -56,20 +58,23 @@ class Orders extends Model
         'created_at',
     ];
 
-//    public function visitor() {
-//        return $this->belongsTo(Visitor::class);
-//    }
-//    public function exhibition() {
-//        return $this->belongsTo(Exhibition::class);
-//    }
-//    public function event() {
-//        return $this->belongsTo(Event::class);
-//    }
-//    public function promocode() {
-//        return $this->belongsTo(Promocodes::class);
-//    }
-//
-//    public function ticket() {
-//        return $this->hasMany(Tickets::class, 'order_id');
-//    }
+    public function currency(): BelongsTo {
+        return $this->belongsTo( Currencies::class );
+    }
+    public function visitor(): BelongsTo {
+        return $this->belongsTo(Visitor::class);
+    }
+    public function exhibition(): BelongsTo {
+        return $this->belongsTo(Exhibition::class);
+    }
+    public function event(): BelongsTo {
+        return $this->belongsTo(Events::class);
+    }
+    public function promocode(): BelongsTo {
+        return $this->belongsTo(Promocodes::class);
+    }
+
+    public function ticket(): HasOne {
+        return $this->hasOne(Tickets::class);
+    }
 }
