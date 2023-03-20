@@ -57,6 +57,10 @@ class Exhibition extends Model
     public function events(): HasMany {
         return $this->hasMany(Events::class);
     }
+
+    public function cards(): HasMany {
+        return $this->hasMany( Cards::class );
+    }
 //    public function order() {
 //        return $this->hasMany(Orders::class);
 //    }

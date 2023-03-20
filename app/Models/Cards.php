@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Kyslik\ColumnSortable\Sortable;
 use Laravel\Scout\Searchable;
 use Spatie\Activitylog\LogOptions;
@@ -76,4 +79,32 @@ class Cards extends Model
         'office',
         'status',
     ];
+
+    public function visitor(): BelongsTo {
+        return $this->belongsTo( Visitor::class );
+    }
+
+    public function topic(): BelongsTo {
+        return $this->belongsTo( Topics::class );
+    }
+
+    public function country(): BelongsTo {
+        return $this->belongsTo( Countries::class );
+    }
+
+    public function exhibitions(): BelongsToMany {
+        return $this->belongsToMany( Exhibition::class );
+    }
+
+    public function emails(): HasMany {
+        return $this->hasMany( Emails::class );
+    }
+
+    public function phones(): HasMany {
+        return $this->hasMany( Phones::class );
+    }
+
+    public function comments(): HasMany {
+        return $this->hasMany( Comments::class );
+    }
 }

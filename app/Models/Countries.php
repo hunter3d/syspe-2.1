@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Countries extends Model {
     use HasFactory;
@@ -16,4 +17,8 @@ class Countries extends Model {
         'name_ru',
         'name_en',
     ];
+
+    public function cards(): HasMany {
+        return $this->hasMany( Cards::class );
+    }
 }
