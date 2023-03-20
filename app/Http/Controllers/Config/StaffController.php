@@ -36,9 +36,6 @@ class StaffController extends Controller
 
     public function edit( $id )
     {
-//        $data['users'] = User::where('is_blocked',0)->get();
-//        $data['departments'] = Department::all();
-//        $data['positions'] = Position::all();
         $data['person'] = User::find($id);
         $data['roles'] = '';
         foreach ( $data['person']->roles as $role )

@@ -23,14 +23,14 @@ class AuthController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
         $user = Auth::user();
-        activity('user')->withProperties(['ip' => request()->ip()])->log('Вошел в систему');
+        activity('UserAuth')->withProperties(['ip' => request()->ip()])->log('Вошел в систему');
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     public function destroy(Request $request)
     {
         $user = Auth::user();
-        activity('user')->withProperties(['ip' => request()->ip()])->log('Вышел из системы');
+        activity('UserAuth')->withProperties(['ip' => request()->ip()])->log('Вышел из системы');
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
