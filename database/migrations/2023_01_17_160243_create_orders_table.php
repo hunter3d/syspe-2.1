@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('number');
             $table->enum('pay_method',['promocode','card','invoice']);
             $table->bigInteger('promocode_id')->default(0);
-            $table->enum('currency',['uah','euro','usd']);
+            $table->bigInteger('currency_id')->default(1);
             $table->decimal('price',10,2);
             $table->enum('status',['new','complete','false']);
             $table->timestamps();

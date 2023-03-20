@@ -36,7 +36,7 @@ class Orders extends Model
                 'number',
                 'pay_method',
                 'price',
-                'currency',
+                'currency_id',
                 'status',
             ])
             ->useLogName('Orders');

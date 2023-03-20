@@ -33,7 +33,7 @@ class OrdersSeeder extends Seeder
                 'number'        => $r->number,
                 'pay_method'    => 'promocode',
                 'price'         => $r->price,
-                'currency'      => 'uah',
+                'currency_id'      => 1,
                 'status'        => $r->status,
             ]);
         }
