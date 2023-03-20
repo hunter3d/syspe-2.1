@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             QuestionnairesSeeder::class,
             AnsweroptionsSeeder::class,
             AnswersSeeder::class,
+            TicketsSeeder::class,
         ]);
     }
 }
