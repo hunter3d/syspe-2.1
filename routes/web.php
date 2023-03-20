@@ -18,11 +18,27 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//
 Route::get('/', [MainController::class, 'index'])
     ->middleware('auth')
     ->name('dashboard');
-
+Route::prefix('messages')->group(function () {
+    Route::get('/add', [MainController::class, 'create'])
+        ->middleware('auth')
+        ->name('messages.create');
+    Route::post('/add', [MainController::class, 'store'])
+        ->middleware('auth')
+        ->name('messages.store');
+    Route::get('/edit/{id}', [MainController::class, 'edit'])
+        ->middleware('auth')
+        ->name('messages.create');
+    Route::post('/edit/{id}', [MainController::class, 'update'])
+        ->middleware('auth')
+        ->name('messages.update');
+    Route::get('/delete/{id}', [MainController::class, 'destroy'])
+        ->middleware('auth')
+        ->name('messages.destroy');
+});
 // AUTH
 Route::prefix('auth')->group(function () {
     Route::get('/login', [AuthController::class, 'create'])
