@@ -81,30 +81,47 @@ class Cards extends Model
     ];
 
     public function visitor(): BelongsTo {
-        return $this->belongsTo( Visitor::class );
+        return $this->belongsTo( Visitor::class);
     }
 
     public function topic(): BelongsTo {
-        return $this->belongsTo( Topics::class );
+        return $this->belongsTo( Topics::class);
     }
 
     public function country(): BelongsTo {
-        return $this->belongsTo( Countries::class );
+        return $this->belongsTo( Countries::class);
     }
 
     public function exhibitions(): BelongsToMany {
-        return $this->belongsToMany( Exhibition::class );
+        return $this->belongsToMany( Exhibition::class, 'card_exhibition','card_id', 'exhibition_id', 'id', 'id');
     }
 
     public function emails(): HasMany {
-        return $this->hasMany( Emails::class );
+        return $this->hasMany( Emails::class, 'card_id', 'id');
     }
 
     public function phones(): HasMany {
-        return $this->hasMany( Phones::class );
+        return $this->hasMany( Phones::class, 'card_id', 'id');
     }
 
     public function comments(): HasMany {
-        return $this->hasMany( Comments::class );
+        return $this->hasMany( Comments::class, 'card_id', 'id' );
+    }
+
+    public function toSearchableArray(): array {
+        $array = $this
+        ->with('phones')
+        ->with('emails')
+        ->with('comments')
+        ->where('id',$this->id)
+        ->first()
+        ->toArray();
+
+        $array['visitor']       = ($this->visitor?$this->visitor->toArray():null);
+        $array['topic']         = ($this->topic?$this->topic->toArray():null);
+        $array['country']       = ($this->country?$this->country->toArray():null);
+        $array['exhibitions']   = ($this->exhibitions?$this->exhibitions->toArray():null);
+
+        return $array;
     }
 }

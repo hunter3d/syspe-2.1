@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             TicketsSeeder::class,
             CardExhibitionSeeder::class,
             CardsSeeder::class,
+            PromocodesSeeder::class,
         ]);
     }
 }

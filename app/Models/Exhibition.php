@@ -45,22 +45,22 @@ class Exhibition extends Model
         'template',
     ];
 
-//    protected $touches = ['cards'];
-//
-//    public function cards()
-//    {
-//        return $this
-//            ->belongsToMany(Card::class)
-//            ->using(CardExhibition::class);
-//    }
-//
+    protected $touches = ['cards'];
+
+    public function cards()
+    {
+        return $this
+            ->hasMany(Cards::class)
+            ->using(CardExhibition::class);
+    }
+
     public function events(): HasMany {
         return $this->hasMany(Events::class);
     }
 
-    public function cards(): HasMany {
-        return $this->hasMany( Cards::class );
-    }
+//    public function cards(): HasMany {
+//        return $this->hasMany( Cards::class );
+//    }
 //    public function order() {
 //        return $this->hasMany(Orders::class);
 //    }
@@ -78,15 +78,14 @@ class Exhibition extends Model
 //    }
 }
 
-//// rebuild Scout index
-//class CardExhibition extends Pivot
-//{
-//    public static function boot()
-//    {
-//        parent::boot();
-//        static::deleted(function ( $item )
-//        {
-//            Card::find($item->card_id)->touch();
-//        });
-//    }
-//}
+// rebuild Scout index
+class CardExhibition extends Pivot {
+    public static function boot()
+    {
+        parent::boot();
+        static::deleted(function ( $item )
+        {
+            Cards::find($item->card_id)->touch();
+        });
+    }
+}
