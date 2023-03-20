@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ExhibitionAddFormRequest;
-use App\Http\Requests\ExhibitionEditFormRequest;
+use App\Http\Requests\ExhibitionsFormRequest;
 use App\Models\Exhibition;
 use Illuminate\Http\Request;
 
@@ -24,7 +23,7 @@ class ExhibitionsController extends Controller {
         return view( 'exhibitions.add' );
     }
 
-    public function store( ExhibitionAddFormRequest $request ) {
+    public function store( ExhibitionsFormRequest $request ) {
         $request->store();
         return redirect()->route( 'exhibitions' );
     }
@@ -34,7 +33,7 @@ class ExhibitionsController extends Controller {
         return view( 'exhibitions.edit', $data );
     }
 
-    public function update( $id, ExhibitionEditFormRequest $request ) {
+    public function update( $id, ExhibitionsFormRequest $request ) {
         $request->update( $id );
         return redirect()->route( 'exhibitions' );
     }

@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])
     ->middleware('auth')
     ->name('dashboard');
+
 Route::prefix('messages')->group(function () {
     Route::get('/add', [MainController::class, 'create'])
         ->middleware('auth')
@@ -39,6 +40,7 @@ Route::prefix('messages')->group(function () {
         ->middleware('auth')
         ->name('messages.destroy');
 });
+
 // AUTH
 Route::prefix('auth')->group(function () {
     Route::get('/login', [AuthController::class, 'create'])
