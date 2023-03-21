@@ -51,9 +51,9 @@
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
 
-                                    <td><i class="fal {{ $event->pay_uah==1?'fa-plus text-success':'fa-minus text-error' }}"></i></td>
-                                    <td><i class="fal {{ $event->pay_euro==1?'fa-plus text-success':'fa-minus text-error' }}"></i></td>
-                                    <td><i class="fal {{ $event->pay_usd==1?'fa-plus text-success':'fa-minus text-error' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_uah==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_euro==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_usd==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
                                     <td>{{ $event->price_uah }}</td>
                                     <td>{{ $event->price_euro }}</td>
                                     <td>{{ $event->price_usd }}</td>
