@@ -29,6 +29,8 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Конец')</th>
 
                                 <th class="text-nowrap" scope="col">@sortablelink('pay_uah',new Illuminate\Support\HtmlString('<i class="fal fa-hryvnia"></i>'))</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_euro',new Illuminate\Support\HtmlString('<i class="fal fa-euro"></i>'))</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_usd',new Illuminate\Support\HtmlString('<i class="fal fa-dollar"></i>'))</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_uah','Грн')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_euro','Евро')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_usd','Usd')</th>
@@ -50,6 +52,8 @@
                                     <td>{{ $event->stop }}</td>
 
                                     <td>{{ $event->pay_uah }}</td>
+                                    <td>{{ $event->pay_euro }}</td>
+                                    <td>{{ $event->pay_euro }}</td>
                                     <td>{{ $event->price_uah }}</td>
                                     <td>{{ $event->price_euro }}</td>
                                     <td>{{ $event->price_usd }}</td>
