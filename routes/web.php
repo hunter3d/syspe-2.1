@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Config\LogsController;
 use App\Http\Controllers\Config\RolesController;
 use App\Http\Controllers\Config\StaffController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -136,4 +137,44 @@ Route::prefix('exhibitions')->group(function () {
         ->middleware('auth')
         ->middleware('allow:exhibitions destroy')
         ->name('exhibitions.destroy');
+});
+
+// EVENTS
+Route::prefix('events')->group(function () {
+    Route::get('/index', [EventsController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:events')
+        ->name('events');
+    Route::get('/exhibition/{id}', [EventsController::class, 'exhibition'])
+        ->middleware('auth')
+        ->middleware('allow:events')
+        ->name('events:exhibition');
+    Route::get('/show/{id}', [EventsController::class, 'show'])
+        ->middleware('auth')
+        ->middleware('allow:events')
+        ->name('events.show');
+    Route::get('/exhibition/{id}', [EventsController::class, 'exhibition'])
+        ->middleware('auth')
+        ->middleware('allow:events')
+        ->name('events.exhibition');
+    Route::get('/add', [EventsController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:events create')
+        ->name('events.create');
+    Route::post('/add', [EventsController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:events store')
+        ->name('events.store');
+    Route::get('/edit/{id}', [EventsController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:events edit')
+        ->name('events.create');
+    Route::post('/edit/{id}', [EventsController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:events update')
+        ->name('events.update');
+    Route::get('/delete/{id}', [EventsController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:events destroy')
+        ->name('events.destroy');
 });

@@ -14,13 +14,13 @@
                 </li>
             @endcan
 
-{{--            @can('events')--}}
-{{--                <li>--}}
-{{--                    <a href="/events/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-calendar-check fa-fw text-primary"></i>&nbsp;Мероприятия--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('events')
+                <li>
+                    <a href="/events/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-calendar-check fa-fw text-primary"></i>&nbsp;Мероприятия
+                    </a>
+                </li>
+            @endcan
 
 {{--            @can('answers')--}}
 {{--                <li>--}}
