@@ -112,7 +112,7 @@ class Events extends Model {
     }
 
     public function orders(): HasMany {
-        return $this->hasMany( Orders::class );
+        return $this->hasMany( Orders::class, 'event_id', 'id' );
     }
 
     public function promocodes(): HasMany {
@@ -120,6 +120,6 @@ class Events extends Model {
     }
 
     public function tickets(): HasMany {
-        return $this->hasMany( Tickets::class );
+        return $this->hasMany( Tickets::class, 'event_id', 'id' );
     }
 }
