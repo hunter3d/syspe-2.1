@@ -61,4 +61,9 @@ class EventsController extends Controller
         $request->update( $id );
         return redirect()->route('events');
     }
+
+    public function destroy( $id ) {
+
+        return redirect()->route('events');
+    }
 }
