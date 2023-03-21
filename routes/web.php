@@ -178,3 +178,30 @@ Route::prefix('events')->group(function () {
         ->middleware('allow:events destroy')
         ->name('events.destroy');
 });
+
+// PROMOCODES
+Route::prefix('promocodes')->group(function () {
+    Route::get('/index', [PromocodesController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes')
+        ->name('promocodes');
+    Route::get('/event/{id}', [PromocodesController::class, 'event'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes')
+        ->name('promocodes.event');
+    Route::get('/add', [PromocodesController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes add');
+    Route::post('/add', [PromocodesController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes add');
+    Route::get('/edit/{id}', [PromocodesController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes edit');
+    Route::post('/edit/{id}', [PromocodesController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes edit');
+    Route::get('/delete/{id}', [PromocodesController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:promocodes delete');
+});
