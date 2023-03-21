@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventsFormRequest;
 use App\Models\Events;
 use App\Models\Exhibition;
 
@@ -46,7 +47,7 @@ class EventsController extends Controller
         return view('events.add',$data);
     }
 
-    public function store(EventAddRequest $request)
+    public function store(EventsFormRequest $request)
     {
         $request->store();
         return redirect()->route('events');
@@ -62,7 +63,7 @@ class EventsController extends Controller
         return view('events.edit',$data);
     }
 
-    public function update( $id, EventEditRequest $request)
+    public function update( $id, EventsFormRequest $request)
     {
         $request->update( $id );
         return redirect()->route('events');
