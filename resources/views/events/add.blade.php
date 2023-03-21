@@ -157,6 +157,19 @@
                             <input type="hidden" id="owtt" name="tt_crop_ow" value="">
                             {{-- end Input TICKET_TEMPLATE image --}}
 
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                            </div>
+
                             <div class="row mb-4">
                                 <div class="col-auto">
                                     <label for="price_uah" class="form-label">Стоимость ГРН</label>
