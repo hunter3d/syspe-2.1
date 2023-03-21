@@ -51,7 +51,7 @@
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
 
-                                    <td>{{ $event->pay_uah==1?'<i class="fal fa-checked"></i>':'' }}</td>
+                                    <td><i class="fal fa-checked"></i>{{ $event->pay_uah==1?'':'' }}</td>
                                     <td>{{ $event->pay_euro }}</td>
                                     <td>{{ $event->pay_euro }}</td>
                                     <td>{{ $event->price_uah }}</td>
