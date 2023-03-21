@@ -170,6 +170,20 @@
                                     <label class="form-check-label" for="inlineCheckbox3">Оплата инвойс</label>
                                 </div>
                             </div>
+                            <div class="col-12 mb-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" checked>
+                                    <label class="form-check-label" for="inlineCheckbox1">Оплата в гривне</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox2">Оплата в евро</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1">
+                                    <label class="form-check-label" for="inlineCheckbox3">Оплата в долларах</label>
+                                </div>
+                            </div>
 
 
                             <div class="row mb-4">
