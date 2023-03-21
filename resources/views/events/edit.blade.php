@@ -108,7 +108,6 @@
                             <input type="hidden" id="w" name="crop_w" value="">
                             <input type="hidden" id="h" name="crop_h" value="">
                             <input type="hidden" id="ow" name="crop_ow" value="">
-
                             {{-- Input TICKET_TEMPLATE image --}}
                             <div class="d-flex justify-content-center w-100">
                                 <div class="col-6 mb-4 d-flex justify-content-center">
