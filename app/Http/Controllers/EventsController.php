@@ -31,13 +31,6 @@ class EventsController extends Controller
         return view('events.show', $data);
     }
 
-//    public function exhibition( $id )
-//    {
-//
-//        $data['events'] = Event::where('exhibition_id', $id)->sortable()->paginate(25);
-//        return view('events.exhibition', $data);
-//    }
-
     public function create()
     {
         $data['exhibitions'] = Exhibition::query()

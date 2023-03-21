@@ -19,7 +19,7 @@
                             @csrf
                             <div class="col-12 mb-4">
                                 <label for="exhb" class="form-label">Выставка</label>
-                                <select name="exhb" id="exhb" class="form-select" aria-label="Выставка">
+                                <select name="exhibition_id" id="exhb" class="form-select" aria-label="Выставка">
                                     @foreach($exhibitions as $exhb)
                                         <option {{$exhb->id==$event->exhibition_id?'selected':''}} value="{{$exhb->id}}">{{$exhb->name}}</option>
                                     @endforeach
