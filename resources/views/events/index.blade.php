@@ -28,7 +28,9 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Начало')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Конец')</th>
 
-                                <th class="text-nowrap" scope="col">@sortablelink('price_uah','ГРН')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_uah','Грн')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_euro','Евро')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_usd','Usd')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('template','Ч')</th>
                                 <th class="text-nowrap" scope="col"><i class="fal fa-fw fa-brackets"></i></th>
                                 <th class="text-nowrap" scope="col"></th>
@@ -47,6 +49,8 @@
                                     <td>{{ $event->stop }}</td>
 
                                     <td>{{ $event->price_uah }}</td>
+                                    <td>{{ $event->price_euro }}</td>
+                                    <td>{{ $event->price_usd }}</td>
                                     @if ($event->template == 0)
                                         <td class="text-success"><i class="fal fa-fw fa-unlock"></i></td>
                                     @else
