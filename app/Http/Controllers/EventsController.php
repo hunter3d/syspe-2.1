@@ -65,7 +65,7 @@ class EventsController extends Controller
     public function destroy( $id ) {
         $event = Events::find( $id );
         if ( count( $event->orders )>0 )
-            return redirect()->route('events')->with('danger','Вы не можете удалить мероприятие к нему привязаны заказы');
+            return redirect()->route('events')->with('warning','Вы не можете удалить мероприятие к нему привязаны заказы');
 
         return redirect()->route('events');
     }
