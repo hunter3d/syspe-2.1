@@ -157,30 +157,31 @@
                             <input type="hidden" id="owtt" name="tt_crop_ow" value="">
                             {{-- end Input TICKET_TEMPLATE image --}}
 
-                            <div class="col-4 mb-4">
-                                <label for="price_uah" class="form-label">Стоимость</label>
+                            <div class="col-3 mb-4">
+                                <label for="price_uah" class="form-label">Стоимость ГРН</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fal fa-hryvnia"></i></span>
                                     <input name="price_uah" type="number" value="100" class="form-control text-end" id="price" required>
                                     <span class="input-group-text">.00</span>
                                 </div>
                             </div>
-                            <div class="col-4 mb-4">
-                                <label for="price" class="form-label">Стоимость</label>
+                            <div class="col-3 mb-4">
+                                <label for="price_euro" class="form-label">Стоимость EURO</label>
                                 <div class="input-group">
-                                    <span class="input-group-text">&#8372;</span>
-                                    <input name="price" type="number" value="100" class="form-control text-end" id="price" required>
+                                    <span class="input-group-text"><i class="fal fa-euro-sign"></i></span>
+                                    <input name="price_euro" type="number" value="100" class="form-control text-end" id="price" required>
                                     <span class="input-group-text">.00</span>
                                 </div>
                             </div>
-                            <div class="col-4 mb-4">
-                                <label for="price" class="form-label">Стоимость</label>
+                            <div class="col-3 mb-4">
+                                <label for="price_usd" class="form-label">Стоимость USD</label>
                                 <div class="input-group">
-                                    <span class="input-group-text">&#8372;</span>
-                                    <input name="price" type="number" value="100" class="form-control text-end" id="price" required>
+                                    <span class="input-group-text"><i class="fal fa-dollar-sign"></i></span>
+                                    <input name="price_usd" type="number" value="100" class="form-control text-end" id="price" required>
                                     <span class="input-group-text">.00</span>
                                 </div>
                             </div>
+
 
                             <div class="col-12 mb-4">
                                 <label for="template" class="form-label">Статус</label>
