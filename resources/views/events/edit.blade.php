@@ -153,14 +153,59 @@
                             <input type="hidden" id="htt" name="tt_crop_h" value="">
                             <input type="hidden" id="owtt" name="tt_crop_ow" value="">
                             {{-- end Input TICKET_TEMPLATE image --}}
-
-
                             <div class="col-12 mb-4">
-                                <label for="price" class="form-label">Стоимость</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">&#8372;</span>
-                                    <input name="price" type="number" value="{{floor($event->price)}}" class="form-control text-end" id="price" required>
-                                    <span class="input-group-text">.00</span>
+                                <div class="form-check form-check-inline">
+                                    <input name="can_promo" class="form-check-input" type="checkbox" id="can_promo" value="1" {{ $event->can_promo==1?'checked':'' }}>
+                                    <label class="form-check-label" for="can_promo">Оплата промокод</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="can_card" class="form-check-input" type="checkbox" id="can_card" value="1"  {{ $event->can_card==1?'checked':'' }}>
+                                    <label class="form-check-label" for="can_card">Оплата карта</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="can_invoice" class="form-check-input" type="checkbox" id="can_invoice" value="1"  {{ $event->can_invoice==1?'checked':'' }}>
+                                    <label class="form-check-label" for="can_invoice">Оплата инвойс</label>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="form-check form-check-inline">
+                                    <input name="pay_uah" class="form-check-input" type="checkbox" id="pay_uah" value="1" {{ $event->pay_uah==1?'checked':'' }}>
+                                    <label class="form-check-label" for="pay_uah">Оплата в гривне</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="pay_euro" class="form-check-input" type="checkbox" id="pay_euro" value="1" {{ $event->pay_euro==1?'checked':'' }}>
+                                    <label class="form-check-label" for="pay_euro">Оплата в евро</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="pay_usd" class="form-check-input" type="checkbox" id="pay_usd" value="1" {{ $event->pay_usd==1?'checked':'' }}>
+                                    <label class="form-check-label" for="pay_usd">Оплата в долларах</label>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-auto">
+                                    <label for="price_uah" class="form-label">Стоимость ГРН</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fal fa-hryvnia"></i></span>
+                                        <input name="price_uah" type="number" value="{{ $event->price_uah }}" class="form-control text-end" id="price" required>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label for="price_euro" class="form-label">Стоимость EURO</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fal fa-euro-sign"></i></span>
+                                        <input name="price_euro" type="number" value="{{ $event->price_euro }}" class="form-control text-end" id="price" required>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label for="price_usd" class="form-label">Стоимость USD</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fal fa-dollar-sign"></i></span>
+                                        <input name="price_usd" type="number" value="{{ $event->price_usd }}" class="form-control text-end" id="price" required>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
                                 </div>
                             </div>
 
