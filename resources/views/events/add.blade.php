@@ -158,7 +158,7 @@
                             {{-- end Input TICKET_TEMPLATE image --}}
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" selected>
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" checked>
                                 <label class="form-check-label" for="inlineCheckbox1">Оплата промокод</label>
                             </div>
                             <div class="form-check form-check-inline">
