@@ -39,8 +39,8 @@
                             @foreach($events as $event)
                                 <tr class="{{ $event->template==1?'table-secondary text-muted':'' }}">
                                     <th scope="row">{{ $event->id }}</th>
-                                    <td>{{ $event->name_ua }}</td>
-                                    <td>{{ $event->description_ua }}</td>
+                                    <td>{{ $event->name_uk }}</td>
+                                    <td>{{ $event->description_uk }}</td>
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
                                     <td>{{ $event->exhibition->name }}</td>
