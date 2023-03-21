@@ -28,7 +28,7 @@
 
                             <div class="col-12 mb-4">
                                 <label for="name_uk" class="form-label">Название на украинском</label>
-                                <input name="name_uk" value="{{$event->name_ua}}" type="text" class="form-control" id="name_uk" required>
+                                <input name="name_uk" value="{{$event->name_uk}}" type="text" class="form-control" id="name_uk" required>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="name_ru" class="form-label">Название на русском</label>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="description_uk" class="form-label">Описание на украинском</label>
-                                <textarea name="description_uk" class="form-control" id="description_uk" rows="4" required>{{$event->description_ua}}</textarea>
+                                <textarea name="description_uk" class="form-control" id="description_uk" rows="4" required>{{$event->description_uk}}</textarea>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="description_ru" class="form-label">Описание на русском</label>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="location_uk" class="form-label">Место проведения на украинском</label>
-                                <textarea name="location_uk" class="form-control" id="location_uk" rows="2">{{$event->location_ua}}</textarea>
+                                <textarea name="location_uk" class="form-control" id="location_uk" rows="2">{{$event->location_uk}}</textarea>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="location_ru" class="form-label">Место проведения на русском</label>
