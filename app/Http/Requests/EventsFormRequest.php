@@ -11,7 +11,7 @@ use Intervention\Image\Facades\Image;
 class EventsFormRequest extends FormRequest {
     public function rules(): array {
         return [
-            'exhbition_id'      => ['required','numeric'],
+            'exhibition_id'      => ['required','numeric'],
             'name_uk'           => ['required','string'],
             'name_ru'           => ['required','string'],
             'name_en'           => ['required','string'],
@@ -41,7 +41,7 @@ class EventsFormRequest extends FormRequest {
     public function attributes(): array
     {
         return [
-            'exhbition_id'      => 'Выставка',
+            'exhibition_id'      => 'Выставка',
             'name_uk'           => 'Название на украинском',
             'name_ru'           => 'Название на русском',
             'name_en'           => 'Название на английском',
@@ -128,7 +128,7 @@ class EventsFormRequest extends FormRequest {
 
         // add data to DB
         $ev = Events::create([
-            'exhibition_id'     => $this->input('exhbition_id'),
+            'exhibition_id'     => $this->input('exhibition_id'),
             'name_uk'           => $this->input('name_uk'),
             'name_ru'           => $this->input('name_ru'),
             'name_en'           => $this->input('name_en'),
@@ -214,7 +214,7 @@ class EventsFormRequest extends FormRequest {
         }
 
         // Add to DB
-        $ev->exhibition_id      = $this->input('exhbition_id');
+        $ev->exhibition_id      = $this->input('exhibition_id');
         $ev->name_uk            = $this->input('name_uk');
         $ev->name_ru            = $this->input('name_ru');
         $ev->name_en            = $this->input('name_en');
