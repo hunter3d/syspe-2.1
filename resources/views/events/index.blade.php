@@ -23,8 +23,9 @@
                             <tr>
                                 <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('exhibition.name','Выставка')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('name_ua','Название RU')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('description_ua','Описание RU')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('name_ru','Название RU')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('description_ru','Описание RU')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('location_ru','Место проведения RU')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Начало')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Конец')</th>
 
@@ -51,6 +52,7 @@
                                     <td>{{ $event->exhibition->name }}</td>
                                     <td>{{ $event->name_ru }}</td>
                                     <td>{{ $event->description_ru }}</td>
+                                    <td>{{ $event->location_ru }}</td>
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
 
