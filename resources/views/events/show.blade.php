@@ -22,13 +22,13 @@
                     </div>
                     <img src="{{'/'.$event->logo_path.'/'.$event->logo_name}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{$event->name_ua}}</h5>
-                        <p class="card-text">{{$event->description_ua}}</p>
-                        <p class="card-text">{{$event->location_ua}}</p>
+                        <h5 class="card-title">{{$event->name_uk}}</h5>
+                        <p class="card-text">{{$event->description_uk}}</p>
+                        <p class="card-text">{{$event->location_uk}}</p>
 
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">{{$event->price}} грн.</small>
+                        <small class="text-muted">{{$event->price_uah}} грн.</small>
                     </div>
                 </div>
             </div>
