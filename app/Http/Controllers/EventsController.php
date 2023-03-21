@@ -66,7 +66,12 @@ class EventsController extends Controller
         $event = Events::find( $id );
         if ( count( $event->orders )>0 )
             return redirect()->route('events')->with('error','Вы не можете удалить мероприятие к нему привязаны заказы');
+        if ( count( $event->promocodes )>0 )
+            return redirect()->route('events')->with('error','Вы не можете удалить мероприятие к нему привязаны промокоды');
+        if ( count( $event->tickets )>0 )
+            return redirect()->route('events')->with('error','Вы не можете удалить мероприятие к нему привязаны билеты');
 
-        return redirect()->route('events');
+        $event->delete();
+        return redirect()->route('events')->with('success','Мероприятие успешно удалено');
     }
 }
