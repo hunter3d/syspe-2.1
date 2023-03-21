@@ -51,7 +51,7 @@
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
 
-                                    <td><i class="fal {{ $event->pay_uah==1?'fa-plus text-green':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_uah==1?'fa-plus text-success':'fa-minus text-error' }}"></i></td>
                                     <td>{{ $event->pay_euro }}</td>
                                     <td>{{ $event->pay_euro }}</td>
                                     <td>{{ $event->price_uah }}</td>
