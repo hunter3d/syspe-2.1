@@ -116,7 +116,7 @@ class Events extends Model {
     }
 
     public function promocodes(): HasMany {
-        return $this->hasMany( Promocodes::class );
+        return $this->hasMany( Promocodes::class, 'event_id', 'id' );
     }
 
     public function tickets(): HasMany {
