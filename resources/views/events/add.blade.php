@@ -28,8 +28,8 @@
                             </div>
 
                             <div class="col-12 mb-4">
-                                <label for="name_ua" class="form-label">Название на украинском</label>
-                                <input name="name_ua" type="text" class="form-control" id="name_ua" required>
+                                <label for="name_uk" class="form-label">Название на украинском</label>
+                                <input name="name_uk" type="text" class="form-control" id="name_uk" required>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="name_ru" class="form-label">Название на русском</label>
@@ -40,8 +40,8 @@
                                 <input name="name_en" type="text" class="form-control" id="name_en" required>
                             </div>
                             <div class="col-12 mb-4">
-                                <label for="description_ua" class="form-label">Описание на украинском</label>
-                                <textarea name="description_ua" class="form-control" id="description_ua" rows="4" required></textarea>
+                                <label for="description_uk" class="form-label">Описание на украинском</label>
+                                <textarea name="description_uk" class="form-control" id="description_uk" rows="4" required></textarea>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="description_ru" class="form-label">Описание на русском</label>
@@ -53,8 +53,8 @@
                             </div>
 
                             <div class="col-12 mb-4">
-                                <label for="location_ua" class="form-label">Место проведения на украинском</label>
-                                <textarea name="location_ua" class="form-control" id="location_ua" rows="2"></textarea>
+                                <label for="location_uk" class="form-label">Место проведения на украинском</label>
+                                <textarea name="location_uk" class="form-control" id="location_uk" rows="2"></textarea>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="location_ru" class="form-label">Место проведения на русском</label>
@@ -158,30 +158,30 @@
                             {{-- end Input TICKET_TEMPLATE image --}}
                             <div class="col-12 mb-4">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" checked>
-                                    <label class="form-check-label" for="inlineCheckbox1">Оплата промокод</label>
+                                    <input name="can_promo" class="form-check-input" type="checkbox" id="can_promo" value="1" checked>
+                                    <label class="form-check-label" for="can_promo">Оплата промокод</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1">
-                                    <label class="form-check-label" for="inlineCheckbox2">Оплата карта</label>
+                                    <input name="can_card" class="form-check-input" type="checkbox" id="can_card" value="1">
+                                    <label class="form-check-label" for="can_card">Оплата карта</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1">
-                                    <label class="form-check-label" for="inlineCheckbox3">Оплата инвойс</label>
+                                    <input name="can_invoice" class="form-check-input" type="checkbox" id="can_invoice" value="1">
+                                    <label class="form-check-label" for="can_invoice">Оплата инвойс</label>
                                 </div>
                             </div>
                             <div class="col-12 mb-4">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" checked>
-                                    <label class="form-check-label" for="inlineCheckbox1">Оплата в гривне</label>
+                                    <input name="pay_uah" class="form-check-input" type="checkbox" id="pay_uah" value="1" checked>
+                                    <label class="form-check-label" for="pay_uah">Оплата в гривне</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1">
-                                    <label class="form-check-label" for="inlineCheckbox2">Оплата в евро</label>
+                                    <input name="pay_euro" class="form-check-input" type="checkbox" id="pay_euro" value="1">
+                                    <label class="form-check-label" for="pay_euro">Оплата в евро</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1">
-                                    <label class="form-check-label" for="inlineCheckbox3">Оплата в долларах</label>
+                                    <input name="pay_usd" class="form-check-input" type="checkbox" id="pay_usd" value="1">
+                                    <label class="form-check-label" for="pay_usd">Оплата в долларах</label>
                                 </div>
                             </div>
 
