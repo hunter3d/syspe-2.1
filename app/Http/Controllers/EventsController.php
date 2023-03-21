@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\EventAddRequest;
-use App\Http\Requests\EventEditRequest;
-use App\Models\Event;
+use App\Models\Events;
 use App\Models\Exhibition;
 
 class EventsController extends Controller
@@ -13,7 +11,7 @@ class EventsController extends Controller
 
     public function index()
     {
-        $data['events'] = Event::sortable()->paginate(50);
+        $data['events'] = Events::sortable()->paginate(50);
         $data['total'] = $data['events']->total();
         return view('events.index',$data);
     }
@@ -21,14 +19,14 @@ class EventsController extends Controller
     public function exhibition( $id )
     {
         $data['exhibition'] = Exhibition::find($id);
-        $data['events'] = Event::sortable()->where('exhibition_id', $id)->paginate(50);
+        $data['events'] = Events::sortable()->where('exhibition_id', $id)->paginate(50);
         $data['total'] = $data['events']->total();
         return view('events.exhibition',$data);
     }
 
     public function show( $id )
     {
-        $data['event'] = Event::find( $id );
+        $data['event'] = Events::find( $id );
         return view('events.show', $data);
     }
 
@@ -60,7 +58,7 @@ class EventsController extends Controller
             ->where('template',0)
             ->orderBy('name','asc')
             ->get();
-        $data['event'] = Event::find( $id );
+        $data['event'] = Events::find( $id );
         return view('events.edit',$data);
     }
 
