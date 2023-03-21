@@ -156,7 +156,7 @@
                             <input type="hidden" id="htt" name="tt_crop_h" value="">
                             <input type="hidden" id="owtt" name="tt_crop_ow" value="">
                             {{-- end Input TICKET_TEMPLATE image --}}
-                            <div class="row mb-4">
+                            <div class="col-12 mb-4">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" checked>
                                     <label class="form-check-label" for="inlineCheckbox1">Оплата промокод</label>
