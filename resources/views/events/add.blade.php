@@ -158,16 +158,16 @@
                             {{-- end Input TICKET_TEMPLATE image --}}
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1" selected>
+                                <label class="form-check-label" for="inlineCheckbox1">Оплата промокод</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="1">
+                                <label class="form-check-label" for="inlineCheckbox2">Оплата карта</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="1">
+                                <label class="form-check-label" for="inlineCheckbox3">Оплата инвойс</label>
                             </div>
 
                             <div class="row mb-4">
