@@ -46,7 +46,9 @@
                         <p class="card-text">{{$event->location_ru}}</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">{{$event->price}} грн.</small>
+                        <small class="text-muted">{{$event->price_uah}} грн.</small>
+                        <small class="text-muted">{{$event->price_euro}} евро.</small>
+                        <small class="text-muted">{{$event->price_usd}} долл.</small>
                     </div>
                 </div>
             </div>
@@ -62,7 +64,9 @@
                         <p class="card-text">{{$event->location_en}}</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">{{$event->price}} UAH.</small>
+                        <small class="text-muted">{{$event->price_uah}} uah.</small>
+                        <small class="text-muted">{{$event->price_euro}} euro.</small>
+                        <small class="text-muted">{{$event->price_usd}} usd.</small>
                     </div>
                 </div>
             </div>
