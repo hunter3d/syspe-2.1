@@ -29,6 +29,8 @@
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">{{$event->price_uah}} грн.</small>
+                        <small class="text-muted">{{$event->price_euro}} евро.</small>
+                        <small class="text-muted">{{$event->price_usd}} долл.</small>
                     </div>
                 </div>
             </div>
