@@ -28,6 +28,7 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Начало')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Конец')</th>
 
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_uah','оплата ГРН')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_uah','Грн')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_euro','Евро')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_usd','Usd')</th>
@@ -48,6 +49,7 @@
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
 
+                                    <td>{{ $event->pay_uah }}</td>
                                     <td>{{ $event->price_uah }}</td>
                                     <td>{{ $event->price_euro }}</td>
                                     <td>{{ $event->price_usd }}</td>
