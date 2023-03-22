@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
         $users = DB::connection('mysql_old')->table('users')->get();
         foreach ($users as $user) {
             $usr = User::create([
+                'id'    => $user->id,
                 'email' => $user->email,
                 'password' => $user->password,
                 'is_blocked' => 0,

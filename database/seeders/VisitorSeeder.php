@@ -22,6 +22,7 @@ class VisitorSeeder extends Seeder
         foreach ($vvv as $v) {
             // Add default visitor
             $visitor = Visitor::create([
+                'id'        =>  $v->id,
                 'email'     =>  $v->email,
                 'email_verified_at' => $v->email_verified_at,
                 'password'  =>  $v->password,
