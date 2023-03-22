@@ -46,13 +46,13 @@
 {{--                </li>--}}
 {{--            @endcan--}}
 
-{{--            @can('topics')--}}
-{{--                <li>--}}
-{{--                    <a href="/topics/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-briefcase fa-fw text-primary"></i>&nbsp;Специализации--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('topics')
+                <li>
+                    <a href="/topics/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-briefcase fa-fw text-primary"></i>&nbsp;Специализации
+                    </a>
+                </li>
+            @endcan
 
 {{--            @can('questionnaires')--}}
 {{--                <li>--}}
