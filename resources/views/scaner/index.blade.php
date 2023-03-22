@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <script src="/js/html5-qrcode.min.js"></script>
+    <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
     <script>
         let event_id = null;
         let code = null;

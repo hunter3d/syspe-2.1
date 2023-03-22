@@ -8,6 +8,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ScanerController;
+use App\Http\Controllers\TicketsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -207,10 +208,30 @@ Route::prefix('promocodes')->group(function () {
         ->middleware('allow:promocodes delete');
 });
 
-// Scaner
+// SCANER
 Route::prefix('scaner')->group(function () {
     Route::get('index', [ScanerController::class, 'index'])
         ->middleware('auth')
         ->middleware('allow:scaner')
         ->name('scaner');
+});
+
+// TICKETS
+Route::prefix('tickets')->group(function () {
+    Route::get('/index', [TicketsController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:tickets')
+        ->name('tickets');
+    Route::get('/exhibition/{id}', [TicketsController::class, 'exhibition'])
+        ->middleware('auth')
+        ->middleware('allow:tickets')
+        ->name('tickets.exhibition');
+    Route::get('/event/{id}', [TicketsController::class, 'event'])
+        ->middleware('auth')
+        ->middleware('allow:tickets')
+        ->name('tickets.event');
+    // Tickets Ajax
+    Route::post('/check', [TicketsController::class, 'check'])
+        ->middleware('auth')
+        ->middleware('allow:tickets');
 });
