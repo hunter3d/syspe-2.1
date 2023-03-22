@@ -14,18 +14,18 @@
                     <i class="fal fa-fw fa-filter"></i> Выставка
                 </button>
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownFilterEx">
-                    <li><a class="dropdown-item" href="{{ route('orders') }}">Все</a></li>
+                    <li><a class="dropdown-item" href="{{ route('tickets') }}">Все</a></li>
                     @foreach($exhibitions as $exhibition)
-                        <li><a class="dropdown-item" href="{{ route('orders.exhibition',['id'=>$exhibition->id]) }}">{{$exhibition->name}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('tickets.exhibition',['id'=>$exhibition->id]) }}">{{$exhibition->name}}</a></li>
                     @endforeach
                 </ul>
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownFilterEv" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fal fa-fw fa-filter"></i> Мероприятие
                 </button>
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownFilterEv">
-                    <li><a class="dropdown-item" href="{{ route('orders') }}">Все</a></li>
+                    <li><a class="dropdown-item" href="{{ route('tickets') }}">Все</a></li>
                     @foreach($events as $event)
-                        <li><a class="dropdown-item" href="{{ route('orders.event',['id'=>$event->id]) }}">{{$event->name_ru}}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('tickets.event',['id'=>$event->id]) }}">{{$event->name_ru}}</a></li>
                     @endforeach
                 </ul>
             </div>

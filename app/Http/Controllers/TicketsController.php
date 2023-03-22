@@ -14,7 +14,7 @@ class TicketsController extends Controller
     public function index() {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
         $data['events'] = Events::where('template',0)->get();
-        $data['tickets'] = Tickets::sortable()->paginate(50);
+        $data['tickets'] = Tickets::sortable()->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['tickets']->total();
         return view('tickets.index', $data);
     }
@@ -22,7 +22,7 @@ class TicketsController extends Controller
     public function exhibition( $id ) {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
         $data['events'] = Events::where('template',0)->get();
-        $data['tickets'] = Tickets::sortable()->where('exhibition_id',$id)->paginate(50);
+        $data['tickets'] = Tickets::sortable()->where('exhibition_id',$id)->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['tickets']->total();
         $data['exhb'] = Exhibition::query()->find($id);
         return view('tickets.exhibition', $data);
@@ -30,12 +30,13 @@ class TicketsController extends Controller
     public function event( $id ) {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
         $data['events'] = Events::where('template',0)->get();
-        $data['tickets'] = Tickets::sortable()->where('event_id',$id)->paginate(50);
+        $data['tickets'] = Tickets::sortable()->where('event_id',$id)->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['tickets']->total();
         $data['evnt'] = Event::query()->find($id);
         return view('tickets.event', $data);
     }
 
+    // JSON scanner request
     public function check( Request $request ) {
         if ( request()->json() ) {
             $ticket = Tickets::query()
