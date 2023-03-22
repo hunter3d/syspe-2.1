@@ -12,6 +12,7 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PromocodesController;
 use App\Http\Controllers\ScanerController;
 use App\Http\Controllers\TicketsController;
+use App\Http\Controllers\TopicsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -302,4 +303,42 @@ Route::prefix('cards')->group(function () {
     Route::get('/delemail/{id}/{visitor_id}', [CardsController::class, 'delemail'])
         ->middleware('auth')
         ->middleware('allow:cards edit');
+});
+
+// TOPICS
+Route::prefix('topics')->group(function () {
+    Route::get('/index', [TopicsController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:topics')
+        ->name('topics');
+
+    Route::get('/exhibition/{id}', [TopicsController::class, 'exhibition'])
+        ->middleware('auth')
+        ->middleware('allow:topics')
+        ->name('topics.exhibition');
+
+    Route::get('/add', [TopicsController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:topics add')
+        ->name('topics.add');
+
+    Route::post('/add', [TopicsController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:topics add')
+        ->name('topics.store');
+
+    Route::get('/edit/{id}', [TopicsController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:topics edit')
+        ->name('topics.edit');
+
+    Route::post('/edit/{id}', [TopicsController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:topics edit')
+        ->name('topics.update');
+
+    Route::get('/delete/{id}', [TopicsController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:topics delete')
+        ->name('topics.destroy');
 });
