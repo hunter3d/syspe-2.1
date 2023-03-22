@@ -34,9 +34,10 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('event.name_ru','Мероприятие')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('code','Промокод')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('description','Описание')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('price','Цена')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_uah','Цена ГРН')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_euro','Цена EURO')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_usd','Цена USD')</th>
                                 <th class="text-nowrap" scope="col"><i class="fal fa-fw fa-shopping-cart"></i></th>
-{{--                                <th class="text-nowrap" scope="col"><i class="fal fa-fw fa-ticket"></i></th>--}}
                                 <th class="text-nowrap" scope="col"></th>
                                 <th class="text-nowrap" scope="col"></th>
                             </tr>
@@ -48,9 +49,10 @@
                                     <td>{{ $promocode->event->name_ru .' ('. $promocode->event->start.' - '.$promocode->event->stop .')' }}</td>
                                     <td>{{ $promocode->code }}</td>
                                     <td>{{ $promocode->description }}</td>
-                                    <td>{{ $promocode->price }}</td>
+                                    <td>{{ $promocode->price_uah }}</td>
+                                    <td>{{ $promocode->price_euro }}</td>
+                                    <td>{{ $promocode->price_usd }}</td>
                                     <td>{{ count($promocode->orders) }}</td>
-{{--                                    <td>{{ $promocode->order?$promocode->order:'0' }}</td>--}}
                                     <td><a href="/promocodes/edit/{{$promocode->id}}"><i class="fal fa-fw fa-edit"></i></a></td>
                                     <td><a href="/promocodes/delete/{{$promocode->id}}"><i class="fal fa-fw fa-trash"></i></a></td>
                                 </tr>

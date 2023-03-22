@@ -13,8 +13,10 @@ class PromocodesRequest extends FormRequest
         return [
             'event_id'      => ['required','numeric'],
             'code'          => ['required','string'],
-            'description'   => [],
-            'price'         => ['required', 'numeric'],
+            'description'   => ['string'],
+            'price_uah'     => ['required', 'numeric'],
+            'price_euro'    => ['required', 'numeric'],
+            'price_usd'     => ['required', 'numeric'],
         ];
     }
 
@@ -29,7 +31,9 @@ class PromocodesRequest extends FormRequest
             'event_id'      => 'Мероприятие',
             'code'          => 'Промокод',
             'description'   => 'Описание',
-            'price'         => 'Цена',
+            'price_uah'     => 'Цена ГРН',
+            'price_euro'    => 'Цена EURO',
+            'price_usd'     => 'Цена USD',
         ];
     }
 
@@ -39,7 +43,9 @@ class PromocodesRequest extends FormRequest
             'event_id'      => $this->input('event_id'),
             'code'          => strtoupper($this->input('code')),
             'description'   => $this->input('description'),
-            'price'         => $this->input('price'),
+            'price_uah'     => $this->input('price_uah'),
+            'price_euro'    => $this->input('price_euro'),
+            'price_usd'     => $this->input('price_usd'),
         ]);
     }
 
@@ -49,7 +55,9 @@ class PromocodesRequest extends FormRequest
         $ps->event_id    = $this->input('event_id');
         $ps->code        = strtoupper($this->input('code'));
         $ps->description = $this->input('description');
-        $ps->price       = $this->input('price');
+        $ps->price_uah   = $this->input('price_uah');
+        $ps->price_euro  = $this->input('price_euro');
+        $ps->price_usd   = $this->input('price_usd');
         $ps->save();
     }
 }
