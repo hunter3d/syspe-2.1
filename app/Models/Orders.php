@@ -75,6 +75,6 @@ class Orders extends Model
     }
 
     public function ticket(): HasOne {
-        return $this->hasOne(Tickets::class);
+        return $this->hasOne(Tickets::class, 'order_id','id');
     }
 }
