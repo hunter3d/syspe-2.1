@@ -43,6 +43,7 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('event_id','Мероприятие')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('promocode_id','Промокод')</th>
                                 <th class="text-nowrap" scope="col">Описание</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_method','Способ оплаты')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('currency->name_ru','Валюта')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('price_usd','Цена')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('created_at','Дата')</th>
@@ -61,6 +62,7 @@
                                     <td>{{ $order->event->name_ru }}</td>
                                     <td>{{ $order->promocode_id==0?'не использовался':$order->promocode->code }}</td>
                                     <td>{{ $order->promocode_id==0?'':$order->promocode->description }}</td>
+                                    <td>{{ $order->pay_method }}</td>
                                     <td>{{ $order->currency->name_ru }}</td>
                                     <td>{{ $order->price }}</td>
                                     <td>{{ $order->created_at }}</td>
