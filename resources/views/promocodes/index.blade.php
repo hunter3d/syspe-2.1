@@ -49,7 +49,7 @@
                                     <td>{{ $promocode->code }}</td>
                                     <td>{{ $promocode->description }}</td>
                                     <td>{{ $promocode->price }}</td>
-                                    <td>{{ count($promocode->order) }}</td>
+                                    <td>{{ count($promocode->orders) }}</td>
 {{--                                    <td>{{ $promocode->order?$promocode->order:'0' }}</td>--}}
                                     <td><a href="/promocodes/edit/{{$promocode->id}}"><i class="fal fa-fw fa-edit"></i></a></td>
                                     <td><a href="/promocodes/delete/{{$promocode->id}}"><i class="fal fa-fw fa-trash"></i></a></td>
