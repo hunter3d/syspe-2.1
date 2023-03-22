@@ -9,6 +9,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\PromocodesController;
 use App\Http\Controllers\ScanerController;
 use App\Http\Controllers\TicketsController;
 use Illuminate\Support\Facades\Route;
