@@ -7,7 +7,7 @@
                 </h1>
             </div>
             <div class="col-auto ms-auto text-end">
-                <a href="{{ route('dashboard') }}" class="btn btn-secondary">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">
                     <i class="fal fa-fw fa-backward"></i>
                 </a>
                 <a href="/config/roles/add" class="btn btn-primary" title="add">

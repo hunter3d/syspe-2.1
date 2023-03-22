@@ -7,6 +7,7 @@ use App\Http\Controllers\Config\StaffController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ScanerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -204,4 +205,12 @@ Route::prefix('promocodes')->group(function () {
     Route::get('/delete/{id}', [PromocodesController::class, 'destroy'])
         ->middleware('auth')
         ->middleware('allow:promocodes delete');
+});
+
+// Scaner
+Route::prefix('scaner')->group(function () {
+    Route::get('index', [ScanerController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:scaner')
+        ->name('scaner');
 });

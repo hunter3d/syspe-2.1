@@ -86,13 +86,13 @@
 {{--                </li>--}}
 {{--            @endcan--}}
 
-{{--            @can('scaner')--}}
-{{--                <li>--}}
-{{--                    <a href="/scaner/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-barcode fa-fw text-primary"></i>&nbsp;Сканер--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('scaner')
+                <li>
+                    <a href="/scaner/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-barcode fa-fw text-primary"></i>&nbsp;Сканер
+                    </a>
+                </li>
+            @endcan
 
 {{--            @can('reports')--}}
 {{--                <li class="mb-1">--}}
