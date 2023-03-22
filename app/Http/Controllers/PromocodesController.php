@@ -50,7 +50,7 @@ class PromocodesController extends Controller
     public function destroy( $id )
     {
         $pcode = Promocodes::find($id);
-        if (count($pcode->order) > 0) {
+        if (count($pcode->orders) > 0) {
             return redirect()->route('promocodes')->with('error','Промокод уже нельзя удалить, по нему существует заказ');
         } else {
             $pcode->delete();
