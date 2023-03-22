@@ -19,14 +19,14 @@ class TextsSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::findByName('Developer');
-        $perm = Permission::create(['name'=>'texts']);
-        $role->givePermissionTo($perm);
-        $perm = Permission::create(['name'=>'texts create']);
-        $role->givePermissionTo($perm);
-        $perm = Permission::create(['name'=>'texts update']);
-        $role->givePermissionTo($perm);
-        $perm = Permission::create(['name'=>'texts destroy']);
-        $role->givePermissionTo($perm);
+        //$role = Role::findByName('Developer');
+        //$perm = Permission::create(['name'=>'texts']);
+        //$role->givePermissionTo($perm);
+        //$perm = Permission::create(['name'=>'texts create']);
+        //$role->givePermissionTo($perm);
+        //$perm = Permission::create(['name'=>'texts update']);
+        //$role->givePermissionTo($perm);
+        //$perm = Permission::create(['name'=>'texts destroy']);
+        //$role->givePermissionTo($perm);
     }
 }
