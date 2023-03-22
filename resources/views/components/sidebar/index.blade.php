@@ -62,13 +62,13 @@
 {{--                </li>--}}
 {{--            @endcan--}}
 
-{{--            @can('promocodes')--}}
-{{--                <li>--}}
-{{--                    <a href="/promocodes/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-brackets fa-fw text-primary"></i>&nbsp;Промокоды--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('promocodes')
+                <li>
+                    <a href="/promocodes/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-brackets fa-fw text-primary"></i>&nbsp;Промокоды
+                    </a>
+                </li>
+            @endcan
 
             @can('orders')
                 <li>
