@@ -47,6 +47,7 @@
                                     <th class="text-nowrap" scope="col">Описание</th>
                                     <th class="text-nowrap" scope="col">Валюта</th>
                                     <th class="text-nowrap" scope="col">Цена</th>
+                                    <th class="text-nowrap" scope="col">@sortablelink('exhibition.name','Выставка')</th>
                                     <th class="text-nowrap" scope="col">@sortablelink('event.name_ru','Мероприятие')</th>
                                     <th class="text-nowrap" scope="col">@sortablelink('code','Штрихкод')</th>
                                     <th class="text-nowrap" style="text-align: center" scope="col"><i class="fal fa-fw fa-barcode-read"></i></th>
@@ -64,6 +65,7 @@
                                     <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->position:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->code:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->description:'' }}</td>
+                                    <td>{{ $ticket->order&&$ticket->order->currency?$ticket->order->currency->name_ru:'' }}</td>
                                     <td></td>
                                     <td></td>
                                     <td>{{ $ticket->event->name_ru }}</td>
