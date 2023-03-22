@@ -46,7 +46,7 @@
                             @foreach($promocodes as $promocode)
                                 <tr>
                                     <th scope="row">{{ $promocode->id }}</th>
-                                    <td>{{ $promocode->event->name_ru .' ('. $promocode->event->start.' - '.$promocode->event->stop .')' }}</td>
+                                    <td>{{ $promocode->event->name_ru }}</td>
                                     <td>{{ $promocode->code }}</td>
                                     <td>{{ $promocode->description }}</td>
                                     <td>{{ $promocode->price_uah }}</td>
