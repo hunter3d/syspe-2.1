@@ -70,21 +70,21 @@
 {{--                </li>--}}
 {{--            @endcan--}}
 
-{{--            @can('orders')--}}
-{{--                <li>--}}
-{{--                    <a href="/orders/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-shopping-cart fa-fw text-primary"></i>&nbsp;Заказы--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('orders')
+                <li>
+                    <a href="/orders/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-shopping-cart fa-fw text-primary"></i>&nbsp;Заказы
+                    </a>
+                </li>
+            @endcan
 
-{{--            @can('tickets')--}}
-{{--                <li>--}}
-{{--                    <a href="/tickets/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-ticket fa-fw text-primary"></i>&nbsp;Билеты--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('tickets')
+                <li>
+                    <a href="/tickets/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-ticket fa-fw text-primary"></i>&nbsp;Билеты
+                    </a>
+                </li>
+            @endcan
 
             @can('scaner')
                 <li>

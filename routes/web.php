@@ -7,6 +7,7 @@ use App\Http\Controllers\Config\StaffController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ScanerController;
 use App\Http\Controllers\TicketsController;
 use Illuminate\Support\Facades\Route;
@@ -214,6 +215,26 @@ Route::prefix('scaner')->group(function () {
         ->middleware('auth')
         ->middleware('allow:scaner')
         ->name('scaner');
+});
+
+// ORDERS
+Route::prefix('orders')->group(function () {
+    Route::get('/index', [OrdersController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:orders')
+        ->name('orders');
+});
+Route::prefix('orders')->group(function () {
+    Route::get('/exhibition/{id}', [OrdersController::class, 'exhibition'])
+        ->middleware('auth')
+        ->middleware('allow:orders')
+        ->name('orders.exhibition');
+});
+Route::prefix('orders')->group(function () {
+    Route::get('/event/{id}', [OrdersController::class, 'event'])
+        ->middleware('auth')
+        ->middleware('allow:orders')
+        ->name('orders.event');
 });
 
 // TICKETS
