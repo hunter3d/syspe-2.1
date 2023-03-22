@@ -5,7 +5,7 @@
                 <h1 class="h3 mb-3"><i class="fal fa-fw fa-brackets text-secondary"></i>&nbsp;Создать промокод</h1>
             </div>
             <div class="col-auto ms-auto text-end">
-                <a href="{{ route('promocodes') }}" class="btn btn-secondary">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">
                     <i class="fal fa-fw fa-backward"></i>
                 </a>
             </div>
@@ -34,12 +34,30 @@
                                 <label for="description" class="form-label">Описание</label>
                                 <textarea name="description" class="form-control" id="description" rows="4"></textarea>
                             </div>
-                            <div class="col-12 mb-4">
-                                <label for="price" class="form-label">Стоимость</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">&#8372;</span>
-                                    <input name="price" type="number" value="0" class="form-control text-end" id="price" required>
-                                    <span class="input-group-text">.00</span>
+                            <div class="row mb-4">
+                                <div class="col-auto">
+                                    <label for="price_uah" class="form-label">Стоимость ГРН</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fal fa-hryvnia"></i></span>
+                                        <input name="price_uah" type="number" value="0" class="form-control text-end" id="price_uah" required>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label for="price_euro" class="form-label">Стоимость EURO</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fal fa-euro-sign"></i></span>
+                                        <input name="price_euro" type="number" value="0" class="form-control text-end" id="price_euro" required>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <label for="price_usd" class="form-label">Стоимость USD</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fal fa-dollar-sign"></i></span>
+                                        <input name="price_usd" type="number" value="0" class="form-control text-end" id="price_usd" required>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
                                 </div>
                             </div>
 

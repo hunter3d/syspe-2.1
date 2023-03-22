@@ -5,7 +5,7 @@
                 <h1 class="h3 mb-3"><i class="fal fa-fw fa-brackets text-secondary"></i>&nbsp;Редактировать промокод</h1>
             </div>
             <div class="col-auto ms-auto text-end">
-                <a href="{{ route('promocodes') }}" class="btn btn-secondary">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">
                     <i class="fal fa-fw fa-backward"></i>
                 </a>
             </div>
