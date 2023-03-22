@@ -55,9 +55,9 @@
                                 <tr>
                                     <td>{{ $ticket->id }}</td>
                                     <td>{{ $ticket->visito?$ticket->visitor->email:'---' }}</td>
-                                    <td>{{ $ticket->visitor->card?$ticket->visitor->card->last_name.' '.$ticket->visitor->card->first_name.' '.$ticket->visitor->card->second_name:'' }}</td>
-                                    <td>{{ $ticket->visitor->card?$ticket->visitor->card->company:'' }}</td>
-                                    <td>{{ $ticket->visitor->card?$ticket->visitor->card->position:'' }}</td>
+                                    <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->last_name.' '.$ticket->visitor->card->first_name.' '.$ticket->visitor->card->second_name:'' }}</td>
+                                    <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->company:'' }}</td>
+                                    <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->position:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->code:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->description:'' }}</td>
                                     <td>{{ $ticket->event->name_ru }}</td>
