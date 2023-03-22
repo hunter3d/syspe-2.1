@@ -43,6 +43,7 @@
                                     <th class="text-nowrap" scope="col">ФИО</th>
                                     <th class="text-nowrap" scope="col">Компания</th>
                                     <th class="text-nowrap" scope="col">Должность</th>
+                                    <th class="text-nowrap" scope="col">@sortablelink('order.pay_method','Способ оплаты')</th>
                                     <th class="text-nowrap" scope="col">Промокод</th>
                                     <th class="text-nowrap" scope="col">Описание</th>
                                     <th class="text-nowrap" scope="col">Валюта</th>
@@ -63,6 +64,7 @@
                                     <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->last_name.' '.$ticket->visitor->card->first_name.' '.$ticket->visitor->card->second_name:'' }}</td>
                                     <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->company:'' }}</td>
                                     <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->position:'' }}</td>
+                                    <td>{{ $ticket->order?$ticket->order->pay_method:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->code:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->description:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->currency?$ticket->order->currency->name_ru:'' }}</td>
