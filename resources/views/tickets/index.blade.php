@@ -40,11 +40,13 @@
                                 <tr>
                                     <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
                                     <th class="text-nowrap" scope="col">@sortablelink('visitor.email','Посетитель')</th>
-                                    <th class="text-nowrap" scope="col">@sortablelink('visitor.card.last_name','ФИО')</th>
+                                    <th class="text-nowrap" scope="col">ФИО</th>
                                     <th class="text-nowrap" scope="col">Компания</th>
                                     <th class="text-nowrap" scope="col">Должность</th>
-                                    <th style="text-align: center"><i class="fal fa-fw fa-brackets"></i></th>
-                                    <th></th>
+                                    <th class="text-nowrap" scope="col">Промокод</th>
+                                    <th class="text-nowrap" scope="col">Описание</th>
+                                    <th class="text-nowrap" scope="col">Валюта</th>
+                                    <th class="text-nowrap" scope="col">Цена</th>
                                     <th class="text-nowrap" scope="col">@sortablelink('event.name_ru','Мероприятие')</th>
                                     <th class="text-nowrap" scope="col">@sortablelink('code','Штрихкод')</th>
                                     <th class="text-nowrap" style="text-align: center" scope="col"><i class="fal fa-fw fa-barcode-read"></i></th>
@@ -62,6 +64,8 @@
                                     <td>{{ $ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->position:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->code:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->description:'' }}</td>
+                                    <td></td>
+                                    <td></td>
                                     <td>{{ $ticket->event->name_ru }}</td>
                                     <td>{{ $ticket->code }}</td>
                                     <td class="{{$ticket->checked_at?'table-success':''}}">{{ $ticket->checked_at }}</td>
