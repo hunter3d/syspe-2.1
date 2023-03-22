@@ -32,7 +32,7 @@ class TicketsController extends Controller
         $data['events'] = Events::where('template',0)->get();
         $data['tickets'] = Tickets::sortable()->where('event_id',$id)->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['tickets']->total();
-        $data['evnt'] = Event::query()->find($id);
+        $data['evnt'] = Events::query()->find($id);
         return view('tickets.event', $data);
     }
 
