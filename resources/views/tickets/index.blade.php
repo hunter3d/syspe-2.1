@@ -40,9 +40,9 @@
                                 <tr>
                                     <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
                                     <th class="text-nowrap" scope="col">@sortablelink('visitor.email','Посетитель')</th>
-                                    <th>ФИО</th>
-                                    <th>Компания</th>
-                                    <th>Должность</th>
+                                    <th class="text-nowrap" scope="col">@sortablelink('visitor.card.lastname','ФИО')</th>
+                                    <th class="text-nowrap" scope="col">Компания</th>
+                                    <th class="text-nowrap" scope="col">Должность</th>
                                     <th style="text-align: center"><i class="fal fa-fw fa-brackets"></i></th>
                                     <th></th>
                                     <th class="text-nowrap" scope="col">@sortablelink('event.name_ru','Мероприятие')</th>
