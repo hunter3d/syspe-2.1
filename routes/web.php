@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CardsController;
 use App\Http\Controllers\Config\LogsController;
 use App\Http\Controllers\Config\RolesController;
 use App\Http\Controllers\Config\StaffController;
@@ -255,4 +256,49 @@ Route::prefix('tickets')->group(function () {
     Route::post('/check', [TicketsController::class, 'check'])
         ->middleware('auth')
         ->middleware('allow:tickets');
+});
+
+// CARDS
+Route::prefix('cards')->group(function () {
+    Route::get('/index', [CardsController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:cards')
+        ->name('cards');
+
+    Route::get('/show/{id}', [CardsController::class, 'show'])
+        ->middleware('auth')
+        ->middleware('allow:cards')
+        ->name('cards.show');
+    Route::post('/addcomment/{id}', [CardsController::class, 'addcomment'])
+        ->middleware('auth')
+        ->middleware('allow:cards addcomment')
+        ->name('cards.addcomment');
+    Route::get('/delcomment/{id}', [CardsController::class, 'delcomment'])
+        ->middleware('auth')
+        ->middleware('allow:cards delcomment')
+        ->name('cards.delcomment');
+    Route::get('/edit/{id}', [CardsController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit')
+        ->name('cards.edit');
+    Route::post('/edit/{id}', [CardsController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit')
+        ->name('cards.update');
+    Route::get('/delete/{id}', [CardsController::class, 'delete'])
+        ->middleware('auth')
+        ->middleware('allow:cards delete')
+        ->name('cards.delete');
+    Route::post('/addphone/{id}', [CardsController::class, 'addphone'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+    Route::get('/delphone/{id}', [CardsController::class, 'delphone'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+    Route::post('/addemail/{id}', [CardsController::class, 'addemail'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+    Route::get('/delemail/{id}/{visitor_id}', [CardsController::class, 'delemail'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
 });
