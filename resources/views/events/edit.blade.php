@@ -186,7 +186,7 @@
                                     <label for="price_uah" class="form-label">Стоимость ГРН</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fal fa-hryvnia"></i></span>
-                                        <input name="price_uah" type="number" value="{{ $event->price_uah }}" class="form-control text-end" id="price" required>
+                                        <input name="price_uah" type="number" value="{{ $event->price_uah }}" class="form-control text-end" id="price_uah" required>
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
@@ -194,7 +194,7 @@
                                     <label for="price_euro" class="form-label">Стоимость EURO</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fal fa-euro-sign"></i></span>
-                                        <input name="price_euro" type="number" value="{{ $event->price_euro }}" class="form-control text-end" id="price" required>
+                                        <input name="price_euro" type="number" value="{{ $event->price_euro }}" class="form-control text-end" id="price_euro" required>
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
@@ -202,7 +202,7 @@
                                     <label for="price_usd" class="form-label">Стоимость USD</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fal fa-dollar-sign"></i></span>
-                                        <input name="price_usd" type="number" value="{{ $event->price_usd }}" class="form-control text-end" id="price" required>
+                                        <input name="price_usd" type="number" value="{{ $event->price_usd }}" class="form-control text-end" id="price_usd" required>
                                         <span class="input-group-text">.00</span>
                                     </div>
                                 </div>
