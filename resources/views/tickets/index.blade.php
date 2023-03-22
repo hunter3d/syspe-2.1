@@ -63,7 +63,7 @@
                                     <td>{{ $ticket->event->name_ru }}</td>
                                     <td>{{ $ticket->code }}</td>
                                     <td class="{{$ticket->checked_at?'table-success':''}}">{{ $ticket->checked_at }}</td>
-                                    <td><a href="{{ route('cards.show',['id'=>($ticket->visitor->card?$ticket->visitor->card->id:0)]) }}" title="Посмотреть карточку"><i class="fal fa-fw fa-address-card"></i></a></td>
+                                    <td><a href="{{ route('cards.show',['id'=>($ticket->visitor&&$ticket->visitor->card?$ticket->visitor->card->id:0)]) }}" title="Посмотреть карточку"><i class="fal fa-fw fa-address-card"></i></a></td>
                                     <td><a href="{{ $ticket->file }}" title="Скачать / Посмотреть билет"><i class="fal fa-fw fa-file-pdf"></i></a></td>
                                 </tr>
                             @endforeach
