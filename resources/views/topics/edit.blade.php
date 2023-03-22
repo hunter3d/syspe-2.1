@@ -26,8 +26,8 @@
                                 </select>
                             </div>
                             <div class="col-12 mb-4">
-                                <label for="name_ua" class="form-label">Название на украинском</label>
-                                <input name="name_ua" value="{{$topic->name_ua}}" type="text" class="form-control" id="name_ua" required>
+                                <label for="name_uk" class="form-label">Название на украинском</label>
+                                <input name="name_uk" value="{{$topic->name_uk}}" type="text" class="form-control" id="name_uk" required>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="name_ru" class="form-label">Название на русском</label>
