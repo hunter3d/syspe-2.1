@@ -39,9 +39,11 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('number','Счет')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('visitor_id','Посетитель')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('exhibition_id','Выставка')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('event_id','Мероприятие')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('promocode_id','Промокод')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('price','Цена')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('currency->name_ru','Валюта')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_usd','Цена')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('created_at','Дата')</th>
                                 <th class="text-nowrap" scope="col"><i class="fal fa-fw fa-ticket"></i></th>
                                 <th class="text-nowrap" scope="col"></th>
@@ -53,12 +55,14 @@
                                 <tr>
                                     <td>{{ $order->id }}</td>
                                     <td>{{ $order->number }}</td>
-                                    <td><a href="{{ $order->visitor->card?'/cards/show/'.$order->visitor->card->id:'#' }}" title="Посмотреть карточку">{{ $order->visitor->email }}</a></td>
+                                    <td><a href="{{ $order->visitor&&$order->visitor->card?'/cards/show/'.$order->visitor->card->id:'#' }}" title="Посмотреть карточку">{{ $order->visitor?$order->visitor->email:'---' }}</a></td>
+                                    <td>{{ $order->exhibition->name }}</td>
                                     <td>{{ $order->event->name_ru }}</td>
-                                    <td>{{ $order->promocode_id==0?'не установлен':$order->promocode->code }}</td>
+                                    <td>{{ $order->promocode_id==0?'не использовался':$order->promocode->code }}</td>
+                                    <td>{{ $order->currency->name_ru }}</td>
                                     <td>{{ $order->price }}</td>
                                     <td>{{ $order->created_at }}</td>
-                                    <td>{{ count($order->ticket) }}</td>
+                                    <td>{{ $order->ticket?1:0 }}</td>
                                     <td class="{{$order->status=='complete'?'text-bg-success':''}}{{$order->status=='false'?'text-bg-danger':''}}">{{ ($order->status=='complete'?'Оплачен':'Не оплачен') }}</td>
                                     <td><a href="/orders/delete/{{$order->id}}"><i class="fal fa-fw fa-trash"></i></a></td>
                                 </tr>
