@@ -71,7 +71,7 @@ class TopicsController extends Controller
     {
         if ( $id!=1 )
         {
-            $cards = Cards::query()->where('cardtopic_id', $id)->get();
+            $cards = Cards::query()->where('topic_id', $id)->get();
             foreach ($cards as $card)
             {
                 $card->cardtopic_id = 1;
