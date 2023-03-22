@@ -66,7 +66,7 @@
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->code:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->description:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->currency?$ticket->order->currency->name_ru:'' }}</td>
-                                    <td></td>
+                                    <td>{{ $ticket->order?$ticket->order->price:'' }}</td>
                                     <td></td>
                                     <td>{{ $ticket->event->name_ru }}</td>
                                     <td>{{ $ticket->code }}</td>
