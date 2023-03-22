@@ -59,7 +59,7 @@
                                     <td>{{ $order->exhibition->name }}</td>
                                     <td>{{ $order->event->name_ru }}</td>
                                     <td>{{ $order->promocode_id==0?'не установлен':$order->promocode->code }}</td>
-                                    <td>{{ $order->currensy->name_ru }}</td>
+                                    <td>{{ $order->currenсy->name_ru }}</td>
                                     <td>{{ $order->price }}</td>
                                     <td>{{ $order->created_at }}</td>
                                     <td>{{ $order->ticket?1:0 }}</td>
