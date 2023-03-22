@@ -60,7 +60,7 @@
                                     <td>{{ $order->promocode_id==0?'не установлен':$order->promocode->code }}</td>
                                     <td>{{ $order->price }}</td>
                                     <td>{{ $order->created_at }}</td>
-                                    <td>{{ count($order->ticket) }}</td>
+                                    <td>{{ $order->ticket?1:0 }}</td>
                                     <td class="{{$order->status=='complete'?'text-bg-success':''}}{{$order->status=='false'?'text-bg-danger':''}}">{{ ($order->status=='complete'?'Оплачен':'Не оплачен') }}</td>
                                     <td><a href="/orders/delete/{{$order->id}}"><i class="fal fa-fw fa-trash"></i></a></td>
                                 </tr>
