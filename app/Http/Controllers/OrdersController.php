@@ -21,7 +21,7 @@ class OrdersController extends Controller
         $data['exhibitions'] = Exhibition::where('template',0)->get();
         $data['events'] = Events::where('template',0)->get();
         $data['exhb'] = Exhibition::query()->find($id);
-        $data['orders'] = Orders::sortable()->where('exhibition_id', $id)->paginate(50);
+        $data['orders'] = Orders::sortable()->where('exhibition_id', $id)->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['orders']->total();
         return view('orders.exhibition',$data);
     }
@@ -30,7 +30,7 @@ class OrdersController extends Controller
         $data['exhibitions'] = Exhibition::where('template',0)->get();
         $data['events'] = Events::where('template',0)->get();
         $data['evnt'] = Events::query()->find($id);
-        $data['orders'] = Orders::sortable()->where('event_id',$id)->paginate(50);
+        $data['orders'] = Orders::sortable()->where('event_id',$id)->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['orders']->total();
         return view('orders.event',$data);
     }
