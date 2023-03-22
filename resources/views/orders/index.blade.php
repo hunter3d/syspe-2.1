@@ -58,7 +58,7 @@
                                     <td><a href="{{ $order->visitor&&$order->visitor->card?'/cards/show/'.$order->visitor->card->id:'#' }}" title="Посмотреть карточку">{{ $order->visitor?$order->visitor->email:'---' }}</a></td>
                                     <td>{{ $order->exhibition->name }}</td>
                                     <td>{{ $order->event->name_ru }}</td>
-                                    <td>{{ $order->promocode_id==0?'не установлен':$order->promocode->code }}</td>
+                                    <td>{{ $order->promocode_id==0?'не использовался':$order->promocode->code }}</td>
                                     <td>{{ $order->currency->name_ru }}</td>
                                     <td>{{ $order->price }}</td>
                                     <td>{{ $order->created_at }}</td>
