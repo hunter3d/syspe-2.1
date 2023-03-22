@@ -26,6 +26,9 @@
                         <li><a class="dropdown-item" href="{{ route('orders.event',['id'=>$event->id]) }}">{{$event->name_ru}}</a></li>
                     @endforeach
                 </ul>
+                <a href="#" class="btn btn-secondary" onclick="htmlTableToExcel('xlsx')">
+                    <i class="fal fa-fw fa-file-excel"></i> Экспорт в Excel
+                </a>
             </div>
             <div class="col-12">
                 <div class="card">
@@ -33,7 +36,7 @@
                         Список заказов | {{ $evnt->name_ru }} | Всего: <strong>{{ $total }}</strong>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-hover table-sm">
+                        <table id="tblToExcl" class="table table-hover table-sm">
                             <thead>
                             <tr>
                                 <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
@@ -81,4 +84,13 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/xlsx.full.min.js') }}"></script>
+    <script>
+        function htmlTableToExcel(type){
+            var data = document.getElementById('tblToExcl');
+            var excelFile = XLSX.utils.table_to_book(data, {sheet: "sheet1"});
+            XLSX.write(excelFile, { bookType: type, bookSST: true, type: 'base64' });
+            XLSX.writeFile(excelFile, 'ExportedFile:HTMLTableToExcel.' + type);
+        }
+    </script>
 </x-app>
