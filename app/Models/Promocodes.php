@@ -52,6 +52,6 @@ class Promocodes extends Model
         return $this->belongsTo( Events::class );
     }
     public function orders(): HasMany {
-        return $this->hasMany(Orders::class);
+        return $this->hasMany(Orders::class, 'promocode_id','id');
     }
 }
