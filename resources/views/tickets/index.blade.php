@@ -67,7 +67,7 @@
                                     <td>{{ $ticket->order&&$ticket->order->promocode?$ticket->order->promocode->description:'' }}</td>
                                     <td>{{ $ticket->order&&$ticket->order->currency?$ticket->order->currency->name_ru:'' }}</td>
                                     <td>{{ $ticket->order?$ticket->order->price:'' }}</td>
-                                    <td></td>
+                                    <td>{{ $ticket->exhibition->name }}</td>
                                     <td>{{ $ticket->event->name_ru }}</td>
                                     <td>{{ $ticket->code }}</td>
                                     <td class="{{$ticket->checked_at?'table-success':''}}">{{ $ticket->checked_at }}</td>
