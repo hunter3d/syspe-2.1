@@ -45,7 +45,7 @@
                             <tr>
                                 <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('exhibition->name','Выставка')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('name_ua','Название UA')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('name_uk','Название UA')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('name_ru','Название RU')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('name_en','Название EN')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('template','Статус')</th>
@@ -58,7 +58,7 @@
                                 <tr class="{{ $topic->template==1?'table-secondary text-muted':'' }}">
                                     <td>{{ $topic->id }}</td>
                                     <td>{{ ($topic->exhibition_id == 0?'не установлено':$topic->exhibition->name) }}</td>
-                                    <td>{{ $topic->name_ua }}</td>
+                                    <td>{{ $topic->name_uk }}</td>
                                     <td>{{ $topic->name_ru }}</td>
                                     <td>{{ $topic->name_en }}</td>
                                     <td class="{{$topic->template==0?'table-success':''}}">{{ $topic->template==0?'Активная':'Черновик' }}</td>

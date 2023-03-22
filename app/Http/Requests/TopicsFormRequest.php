@@ -9,7 +9,7 @@ class TopicsFormRequest extends FormRequest {
     public function rules(): array {
         return [
             'exhibition_id' => ['required','numeric'],
-            'name_ua' => ['required','string'],
+            'name_uk' => ['required','string'],
             'name_ru' => ['required','string'],
             'name_en' => ['required','string'],
             'template' => ['required','numeric']
@@ -20,7 +20,7 @@ class TopicsFormRequest extends FormRequest {
     {
         return [
             'exhibition_id' => 'Выставка',
-            'name_ua' => 'Название на украинском',
+            'name_uk' => 'Название на украинском',
             'name_ru' => 'Название на русском',
             'name_en' => 'Название на английском',
             'template' => 'Статус',
@@ -34,7 +34,7 @@ class TopicsFormRequest extends FormRequest {
     {
         $topic = Topics::create([
             'exhibition_id' => $this->input('exhibition_id'),
-            'name_ua' => $this->input('name_ua'),
+            'name_uk' => $this->input('name_uk'),
             'name_ru' => $this->input('name_ru'),
             'name_en' => $this->input('name_en'),
             'template' => $this->input('template'),
@@ -45,7 +45,7 @@ class TopicsFormRequest extends FormRequest {
     {
         $topic = Topics::find($id);
         $topic->exhibition_id = $this->input('exhibition_id');
-        $topic->name_ua = $this->input('name_ua');
+        $topic->name_uk = $this->input('name_uk');
         $topic->name_ru = $this->input('name_ru');
         $topic->name_en = $this->input('name_en');
         $topic->template = $this->input('template');
