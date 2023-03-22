@@ -42,9 +42,8 @@
                                 <th class="text-nowrap" scope="col">@sortablelink('exhibition_id','Выставка')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('event_id','Мероприятие')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('promocode_id','Промокод')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('price_uah','Цена ГРН')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('price_euro','Цена EURO')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('price_usd','Цена USD')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('currency->name_ru','Валюта')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_usd','Цена')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('created_at','Дата')</th>
                                 <th class="text-nowrap" scope="col"><i class="fal fa-fw fa-ticket"></i></th>
                                 <th class="text-nowrap" scope="col"></th>
@@ -60,9 +59,8 @@
                                     <td>{{ $order->exhibition->name }}</td>
                                     <td>{{ $order->event->name_ru }}</td>
                                     <td>{{ $order->promocode_id==0?'не установлен':$order->promocode->code }}</td>
-                                    <td>{{ $order->price_uah }}</td>
-                                    <td>{{ $order->price_euro }}</td>
-                                    <td>{{ $order->price_usd }}</td>
+                                    <td>{{ $order->currensy->name_ru }}</td>
+                                    <td>{{ $order->price }}</td>
                                     <td>{{ $order->created_at }}</td>
                                     <td>{{ $order->ticket?1:0 }}</td>
                                     <td class="{{$order->status=='complete'?'text-bg-success':''}}{{$order->status=='false'?'text-bg-danger':''}}">{{ ($order->status=='complete'?'Оплачен':'Не оплачен') }}</td>
