@@ -12,7 +12,7 @@ class OrdersController extends Controller
     public function index() {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
         $data['events'] = Events::where('template',0)->get();
-        $data['orders'] = Orders::sortable()->paginate(50);
+        $data['orders'] = Orders::sortable()->orderBy('id','DESC')->paginate(50);
         $data['total'] = $data['orders']->total();
         return view('orders.index',$data);
     }
