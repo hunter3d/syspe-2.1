@@ -40,7 +40,7 @@ class CardsController extends Controller
 
     public function show($id)
     {
-        $data['card'] = Card::find($id);
+        $data['card'] = Cards::find($id);
         $data['orders'] = Orders::where('visitor_id', $data['card']->visitor_id)->get();
         $data['tickets'] = Tickets::where('visitor_id', $data['card']->visitor_id)->get();
         return view('cards.show',$data);
