@@ -15,6 +15,7 @@ use App\Http\Controllers\QuestionnairesController;
 use App\Http\Controllers\ScanerController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\TopicsController;
+use App\Http\Controllers\VisitorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -403,4 +404,12 @@ Route::prefix('answeroptions')->group(function () {
         ->middleware('auth')
         ->middleware('allow:answeroptions destroy')
         ->name('answeroptions destroy');
+});
+
+// VISITORS
+Route::prefix('visitors')->group(function () {
+    Route::get('/index', [VisitorsController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:visitors')
+        ->name('visitors');
 });

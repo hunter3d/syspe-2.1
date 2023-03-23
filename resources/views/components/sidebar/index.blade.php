@@ -30,13 +30,13 @@
 {{--                </li>--}}
 {{--            @endcan--}}
 
-{{--            @can('visitors')--}}
-{{--                <li>--}}
-{{--                    <a href="/visitors/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-users fa-fw text-primary"></i>&nbsp;Посетители--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('visitors')
+                <li>
+                    <a href="/visitors/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-users fa-fw text-primary"></i>&nbsp;Посетители
+                    </a>
+                </li>
+            @endcan
 
 {{--            @can('cards')--}}
 {{--                <li>--}}
