@@ -151,14 +151,7 @@
                                 </select>
                             </div>
 
-                            <div class="col-12 mb-4">
-                                <label for="old_id" class="form-label">Старый ID</label>
-                                <input name="old_id" disabled value="{{$card->old_id}}" type="text" class="form-control" id="old_id">
-                            </div>
-                            <div class="col-12 mb-4">
-                                <label for="old_description" class="form-label">Примечание</label>
-                                <textarea disabled name="old_description" class="form-control" id="old_description">{{$card->old_description}}</textarea>
-                            </div>
+
                             <button type="submit" class="btn btn-primary">Редактировать</button>
                         </div>
                     </form>
