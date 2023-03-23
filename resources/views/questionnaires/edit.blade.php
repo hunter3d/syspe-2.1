@@ -50,8 +50,8 @@
                             <div class="col-12 mb-4">
                                 <label for="template" class="form-label">Статус</label>
                                 <select name="template" id="template" class="form-select" aria-label="Статус">
-                                    <option {{$question->tempate==0?'selected':''}} value="0">Активный</option>
-                                    <option {{$question->tempate==1?'selected':''}} value="1">Черновик</option>
+                                    <option {{$question->template==0?'selected':''}} value="0">Активный</option>
+                                    <option {{$question->template==1?'selected':''}} value="1">Черновик</option>
                                 </select>
                             </div>
 
