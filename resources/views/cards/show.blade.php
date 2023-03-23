@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                             <td class="text-end text-muted">Специализация:</td>
-                            <td>{{ $card->cardtopic->name_ru }}</td>
+                            <td>{{ $card->topic->name_ru }}</td>
                         </tr>
                         <tr>
                             <td class="text-end text-muted">Должность:</td>
