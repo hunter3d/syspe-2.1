@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CardCommentAddRequest;
-use App\Http\Requests\CardEmailAddRequest;
-use App\Http\Requests\CardPhoneAddRequest;
-use App\Http\Requests\Config\CardEditRequest;
-use App\Models\Cardcomment;
-use App\Models\Cardcountry;
-use App\Models\Cardmail;
-use App\Models\Cardphones;
 use App\Models\Cards;
-use App\Models\Cardtopic;
+use App\Models\Comments;
+use App\Models\Countries;
+use App\Models\Emails;
 use App\Models\Exhibition;
 use App\Models\Orders;
+use App\Models\Phones;
 use App\Models\Tickets;
+use App\Models\Topics;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +56,7 @@ class CardsController extends Controller
 
     public function delphone( $id )
     {
-        $phone = Cardphones::find( $id );
+        $phone = Phones::find( $id );
         $phone->delete();
         return back();
     }
@@ -72,10 +68,10 @@ class CardsController extends Controller
     }
 
     public function delemail( $id, $visitor_id ) { // TODO проверка не совпадает ли email с login['email']
-        $email = Cardmail::find( $id );
+        $email = Emails::find( $id );
         $visitor = Visitor::find( $visitor_id );
 
-        $count = Cardmail::where('email', $email->email)->where('card_id',$email->card_id)->count();
+        $count = Emails::where('email', $email->email)->where('card_id',$email->card_id)->count();
 
         if ( $email->email == $visitor->email && $count==1 ) {
             return back()->with('error','Вы не можете удалить email, который используется как логин!');
@@ -87,7 +83,7 @@ class CardsController extends Controller
 
     public function delcomment( $id )
     {
-        $comment = Cardcomment::find( $id );
+        $comment = Comments::find( $id );
         if ( $comment )
         {
             //$id = $comment->user_id;
@@ -106,9 +102,9 @@ class CardsController extends Controller
 
     public function edit( $id )
     {
-        $data['card'] = Card::find( $id );
-        $data['countries'] = Cardcountry::query()->get();
-        $data['cardtopics'] = Cardtopic::query()->get();
+        $data['card'] = Cards::find( $id );
+        $data['countries'] = Countries::query()->get();
+        $data['cardtopics'] = Topics::query()->get();
         $data['exhibitions'] = '';
         foreach ( $data['card']->exhibitions as $exhibition )
         {
