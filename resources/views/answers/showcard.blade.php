@@ -77,7 +77,7 @@
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->first_name:'' }}</td>
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->second_name:'' }}</td>
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->company:'' }}</td>
-                                    <td>{{ $answer->visitor->card?$answer->visitor->card->cardtopic->name_ru:'' }}</td>
+                                    <td>{{ $answer->visitor->card?$answer->visitor->card->topic->name_ru:'' }}</td>
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->position:'' }}</td>
                                     <td>
                                         @php
