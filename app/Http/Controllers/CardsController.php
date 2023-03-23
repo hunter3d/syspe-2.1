@@ -33,7 +33,7 @@ class CardsController extends Controller
         $cards = $cards->sortable()->paginate(50);
         $data['cards'] = $cards;
         $data['total'] = $cards->total();
-        $data['exhibitions'] = Exhibition::query()->get();
+        $data['exhibitions'] = Exhibition::query()->where('template',0)->get();
 
         return view('cards.index',$data);
     }
