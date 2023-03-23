@@ -28,7 +28,7 @@ class AnsweroptionsController extends Controller
     public function update( $id, AnsweroptionsRequest $request )
     {
         $request->update( $id );
-        return redirect('/questionnaire/show/'.$request->input('questionnaire_id'));
+        return redirect('/questionnaires/show/'.$request->input('questionnaire_id'));
     }
 
     public function destroy( $id )
