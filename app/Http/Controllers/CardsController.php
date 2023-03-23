@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CardsFormRequest;
+use App\Http\Requests\CommentsFormRequest;
+use App\Http\Requests\EmailsFormRequest;
+use App\Http\Requests\PhonesFormRequest;
 use App\Models\Cards;
 use App\Models\Comments;
 use App\Models\Countries;
@@ -42,13 +46,13 @@ class CardsController extends Controller
         return view('cards.show',$data);
     }
 
-    public function addcomment($id, CardCommentAddRequest $request)
+    public function addcomment($id, CommentsFormRequest $request)
     {
         $request->store( $id );
         return redirect('/cards/show/'.$id);
     }
 
-    public function addphone( $id, CardPhoneAddRequest $request )
+    public function addphone( $id, PhonesFormRequest $request )
     {
         $request->store( $id );
         return back();
@@ -61,7 +65,7 @@ class CardsController extends Controller
         return back();
     }
 
-    public function addemail( $id, CardEmailAddRequest $request )
+    public function addemail( $id, EmailsFormRequest $request )
     {
         $request->store( $id );
         return back();
@@ -119,7 +123,7 @@ class CardsController extends Controller
         return view('cards.edit', $data);
     }
 
-    public function update( $id, CardEditRequest $request ) {
+    public function update( $id, CardsFormRequest $request ) {
         $request->update( $id );
         return redirect('/cards/index');
     }
