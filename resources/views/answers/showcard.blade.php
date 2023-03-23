@@ -103,7 +103,7 @@
                                             }
                                         @endphp
                                     </td>
-                                    <td>{{ $answer->visitor->card?$answer->visitor->card->cardcountry->name_ru:'' }}</td>
+                                    <td>{{ $answer->visitor->card?$answer->visitor->card->country->name_ru:'' }}</td>
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->region:'' }}</td>
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->district:'' }}</td>
                                     <td>{{ $answer->visitor->card?$answer->visitor->card->city:'' }}</td>
