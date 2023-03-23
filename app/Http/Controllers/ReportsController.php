@@ -2,7 +2,6 @@
 # (c) PremierExpo 2022-2023
 namespace App\Http\Controllers;
 
-use App\Models\Card;
 use App\Models\Exhibition;
 use App\Models\Visitor;
 use Illuminate\Http\Request;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Card;
+use App\Models\Cards;
 
 
 class DebugController extends Controller {
@@ -15,7 +15,7 @@ class DebugController extends Controller {
     }
     public function index() {
 
-        $card = Card::find(1);
+        $card = Cards::find(1);
         $this->fpdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
 
         $this->fpdf->AddPage();
