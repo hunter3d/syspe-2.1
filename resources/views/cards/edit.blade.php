@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="col-12 mb-4">
-                                @foreach($card->phone as $phone)
+                                @foreach($card->phones as $phone)
                                     <div class="btn-group mb-3">
                                         <a href="tel:{{$phone->number}}" type="button" class="btn btn-outline-secondary text-black" disabled><i class="fal fa-fw fa-phone text-muted"></i> {{$phone->number}}</a>
                                         <a href="/cards/delphone/{{$phone->id}}" class="btn btn-secondary"><i class="fal fa-fw fa-trash"></i></a>
@@ -85,11 +85,11 @@
                                 </div>
 
                                 <div class="col-auto mb-4">
-                                    <label for="cardtopic_id" class="form-label">Профиль деятельности</label>
-                                    <select name="cardtopic_id" id="cardtopic_id" class="form-select" aria-label="Профиль деятельности">
-                                        @foreach( $cardtopics as $cardtopic)
-                                            <option {{$card->cardtopic_id==$cardtopic->id?'selected':''}} value="{{$cardtopic->id}}">
-                                                {{$cardtopic->name_ru}}</option>
+                                    <label for="topic_id" class="form-label">Профиль деятельности</label>
+                                    <select name="topic_id" id="topic_id" class="form-select" aria-label="Профиль деятельности">
+                                        @foreach( $topics as $topic)
+                                            <option {{$card->topic_id==$topic->id?'selected':''}} value="{{$topic->id}}">
+                                                {{$topic->name_ru}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -97,10 +97,10 @@
 
                             <div class="row row-cols-1 row-cols-lg-3 row-cols-xl-4">
                                 <div class="col-12 mb-4">
-                                    <label for="cardcountry_id" class="form-label">Страна</label>
-                                    <select name="cardcountry_id" id="cardcountry_id" class="form-select" aria-label="Страна">
+                                    <label for="country_id" class="form-label">Страна</label>
+                                    <select name="country_id" id="country_id" class="form-select" aria-label="Страна">
                                         @foreach( $countries as $country)
-                                            <option {{$card->cardcountry_id==$country->id?'selected':''}} value="{{$country->id}}">
+                                            <option {{$card->country_id==$country->id?'selected':''}} value="{{$country->id}}">
                                                 {{$country->name_ru.' ('.$country->code.')'}}</option>
                                         @endforeach
                                     </select>

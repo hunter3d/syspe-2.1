@@ -108,7 +108,7 @@ class CardsController extends Controller
     {
         $data['card'] = Cards::find( $id );
         $data['countries'] = Countries::query()->get();
-        $data['cardtopics'] = Topics::query()->get();
+        $data['topics'] = Topics::query()->get();
         $data['exhibitions'] = '';
         foreach ( $data['card']->exhibitions as $exhibition )
         {
