@@ -69,7 +69,7 @@
                                         <td>{{ $v->card->second_name }}</td>
                                         <td>
                                             @php
-                                                $phones = $v->card->phone;
+                                                $phones = $v->card->phones;
                                                 $string = '';
                                                 foreach ($phones as $phone) {
                                                     $string .='<span class="badge text-bg-light me-1">'.$phone->number.'</span>';
