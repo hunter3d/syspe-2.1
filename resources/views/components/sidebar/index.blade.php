@@ -54,13 +54,13 @@
                 </li>
             @endcan
 
-{{--            @can('questionnaires')--}}
-{{--                <li>--}}
-{{--                    <a href="/questionnaires/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-check-square fa-fw text-primary"></i>&nbsp;Опросники--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('questionnaires')
+                <li>
+                    <a href="/questionnaires/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-check-square fa-fw text-primary"></i>&nbsp;Опросники
+                    </a>
+                </li>
+            @endcan
 
             @can('promocodes')
                 <li>

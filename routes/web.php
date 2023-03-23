@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnsweroptionsController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\Config\LogsController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PromocodesController;
+use App\Http\Controllers\QuestionnairesController;
 use App\Http\Controllers\ScanerController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\TopicsController;
@@ -341,4 +343,64 @@ Route::prefix('topics')->group(function () {
         ->middleware('auth')
         ->middleware('allow:topics delete')
         ->name('topics.destroy');
+});
+
+// QUESTIONNAIRES
+Route::prefix('questionnaires')->group(function () {
+    Route::get('index', [QuestionnairesController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires')
+        ->name('questionnaires');
+    Route::get('exhibition/{id}', [QuestionnairesController::class, 'exhibition'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires')
+        ->name('questionnaires.exhibition');
+    Route::get('show/{id}', [QuestionnairesController::class, 'show'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires create')
+        ->name('questionnaires show');
+    Route::get('add', [QuestionnairesController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires create')
+        ->name('questionnaires create');
+    Route::post('add', [QuestionnairesController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires store')
+        ->name('questionnaires store');
+    Route::get('edit/{id}', [QuestionnairesController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires edit')
+        ->name('questionnaires edit');
+    Route::post('edit/{id}', [QuestionnairesController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires update')
+        ->name('questionnaires update');
+    Route::get('delete/{id}', [QuestionnairesController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:questionnaires destroy')
+        ->name('questionnaires destroy');
+});
+
+// ANSWEROPTIONS
+Route::prefix('answeroptions')->group(function () {
+    Route::get('add/{id}', [AnsweroptionsController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:answeroptions create')
+        ->name('answeroptions create');
+    Route::post('add', [AnsweroptionsController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:answeroptions store')
+        ->name('answeroptions store');
+    Route::get('edit/{id}', [AnsweroptionsController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:answeroptions edit')
+        ->name('answeroptions edit');
+    Route::post('edit/{id}', [AnsweroptionsController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:answeroptions update')
+        ->name('answeroptions update');
+    Route::get('delete/{id}', [AnsweroptionsController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:answeroptions destroy')
+        ->name('answeroptions destroy');
 });
