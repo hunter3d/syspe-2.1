@@ -24,8 +24,8 @@
                             <input type="hidden" name="questionnaire_id" value="{{$answer->questionnaire->id}}">
 
                             <div class="col-12 mb-4">
-                                <label for="answer_ua" class="form-label">Ответ UA</label>
-                                <input value="{{$answer->answer_ua}}" name="answer_ua" type="text" class="form-control" id="answer_ua" required>
+                                <label for="answer_uk" class="form-label">Ответ UA</label>
+                                <input value="{{$answer->answer_uk}}" name="answer_uk" type="text" class="form-control" id="answer_uk" required>
                             </div>
                             <div class="col-12 mb-4">
                                 <label for="answer_ru" class="form-label">Ответ RU</label>
