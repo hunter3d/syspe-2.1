@@ -37,7 +37,7 @@
                                     <td>{{$event->name_ru}}</td>
                                     <td>{{$event->start}}</td>
                                     <td>{{$event->stop}}</td>
-                                    <td>{{ ($event->answer?count($event->answer):'0') }}</td>
+                                    <td>{{ ($event->answers?count($event->answers):'0') }}</td>
                                     <td><a href="/answers/show/{{$event->id}}">Посмотреть анкеты</a></td>
                                     <td><a href="/answers/showcard/{{$event->id}}">Посмотреть анкеты + карточки</a></td>
                                 </tr>
