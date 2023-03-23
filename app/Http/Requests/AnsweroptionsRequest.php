@@ -11,7 +11,7 @@ class AnsweroptionsRequest extends FormRequest
     {
         return [
             'questionnaire_id' => ['required','numeric'],
-            'answer_ua' => ['required','string'],
+            'answer_uk' => ['required','string'],
             'answer_ru' => ['required','string'],
             'answer_en' => ['required','string'],
             'order' => ['required','numeric'],
@@ -27,7 +27,7 @@ class AnsweroptionsRequest extends FormRequest
     {
         $a = Answeroptions::create([
             'questionnaire_id' => $this->input('questionnaire_id'),
-            'answer_ua' => $this->input('answer_ua'),
+            'answer_uk' => $this->input('answer_uk'),
             'answer_ru' => $this->input('answer_ru'),
             'answer_en' => $this->input('answer_en'),
             'order' => $this->input('order'),
@@ -38,7 +38,7 @@ class AnsweroptionsRequest extends FormRequest
     {
         $q = Answeroptions::find( $id );
         $q->questionnaire_id = $this->input('questionnaire_id');
-        $q->answer_ua = $this->input('answer_ua');
+        $q->answer_uk = $this->input('answer_uk');
         $q->answer_ru = $this->input('answer_ru');
         $q->answer_en = $this->input('answer_en');
         $q->order = $this->input('order');

@@ -13,7 +13,7 @@ class QuestionnairesRequest extends FormRequest
         return [
             'exhibition_id' => ['required','numeric'],
             'type' => ['required','in:textfield,select,checkbox,radio'],
-            'question_ua' => ['required', 'string'],
+            'question_uk' => ['required', 'string'],
             'question_ru' => ['required', 'string'],
             'question_en' => ['required', 'string'],
             'template' => ['required','boolean']
@@ -30,7 +30,7 @@ class QuestionnairesRequest extends FormRequest
         $q = Questionnaires::create([
             'exhibition_id'     => $this->input('exhibition_id'),
             'type'              => $this->input('type'),
-            'question_ua'       => $this->input('question_ua'),
+            'question_uk'       => $this->input('question_uk'),
             'question_ru'       => $this->input('question_ru'),
             'question_en'       => $this->input('question_en'),
             'template'          => $this->input('template'),
@@ -41,7 +41,7 @@ class QuestionnairesRequest extends FormRequest
     {
         $q = Questionnaires::find($id);
         $q->exhibition_id = $this->input('exhibition_id');
-        $q->question_ua = $this->input('question_ua');
+        $q->question_uk = $this->input('question_uk');
         $q->question_ru = $this->input('question_ru');
         $q->question_en = $this->input('question_en');
         $q->type = $this->input('type');
