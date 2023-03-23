@@ -70,7 +70,7 @@
                                     <td>{{ $card->first_name }}</td>
                                     <td>{{ $card->second_name }}</td>
                                     <td>{{ $card->company }}</td>
-                                    <td>{{ $card->cardtopic->name_ru }}</td>
+                                    <td>{{ $card->topic->name_ru }}</td>
                                     <td>
                                         @php
                                             $exhibitions = $card->exhibitions;
@@ -81,7 +81,7 @@
                                             echo $string;
                                         @endphp
                                     </td>
-                                    <td>{{$card->cardcountry->code}}</td>
+                                    <td>{{$card->country->code}}</td>
                                     <td>
                                         @php
                                             $emails = $card->emails;
@@ -94,7 +94,7 @@
                                     </td>
                                     <td>
                                         @php
-                                            $phones = $card->phone;
+                                            $phones = $card->phones;
                                             $string = '';
                                             foreach ($phones as $phone) {
                                                 $string .='<span class="badge text-bg-light me-1">'.$phone->number.'</span>';
