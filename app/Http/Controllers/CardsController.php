@@ -24,7 +24,7 @@ class CardsController extends Controller
     public function index(Request $request)
     {
         $data['filter_exhb'] = null;
-        $cards = Cards::query()->with(['exhibitions','cardcountry','emails','phone']);
+        $cards = Cards::query()->with(['exhibitions','country','emails','phones']);
         if ($request->exhb)
         {
             $data['filter_exhb'] = $request->exhb;
