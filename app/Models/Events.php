@@ -112,7 +112,7 @@ class Events extends Model {
     }
 
     public function answers(): HasMany {
-        return $this->hasMany( Answers::class );
+        return $this->hasMany( Answers::class, 'event_id', 'id' );
     }
 
     public function orders(): HasMany {
