@@ -49,7 +49,7 @@
                             <td>
                                 @php
                                     $phones = '';
-                                    foreach ($card->phone as $p)
+                                    foreach ($card->phones as $p)
                                         {
                                             $phones .= '<span class="badge text-bg-light me-1">'.$p->number.'</span>';
                                         }
