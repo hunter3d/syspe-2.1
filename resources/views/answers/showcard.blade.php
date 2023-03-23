@@ -131,13 +131,13 @@
                                                         echo $data[$q->question_ru];
                                                     }
                                                 }
-                                                if ( array_key_exists($q->question_ua, $data) ) {
-                                                    if( is_array($data[$q->question_ua]) ) {
-                                                        foreach ($data[$q->question_ua] as $str) {
+                                                if ( array_key_exists($q->question_uk, $data) ) {
+                                                    if( is_array($data[$q->question_uk]) ) {
+                                                        foreach ($data[$q->question_uk] as $str) {
                                                             print "$str, ";
                                                         }
                                                     } else {
-                                                        echo $data[$q->question_ua];
+                                                        echo $data[$q->question_uk];
                                                     }
                                                 }
                                                 if ( array_key_exists($q->question_en, $data) ) {
