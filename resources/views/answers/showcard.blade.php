@@ -83,7 +83,7 @@
                                         @php
                                         if ($answer->visitor->card) {
                                             $phones = '';
-                                            foreach ($answer->visitor->card->phone as $p)
+                                            foreach ($answer->visitor->card->phones as $p)
                                                 {
                                                     $phones .= str_replace(' ', '', $p->number).' ';
                                                 }
