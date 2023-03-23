@@ -6,11 +6,11 @@ use App\Http\Requests\CardCommentAddRequest;
 use App\Http\Requests\CardEmailAddRequest;
 use App\Http\Requests\CardPhoneAddRequest;
 use App\Http\Requests\Config\CardEditRequest;
-use App\Models\Card;
 use App\Models\Cardcomment;
 use App\Models\Cardcountry;
 use App\Models\Cardmail;
 use App\Models\Cardphones;
+use App\Models\Cards;
 use App\Models\Cardtopic;
 use App\Models\Exhibition;
 use App\Models\Orders;
@@ -24,7 +24,7 @@ class CardsController extends Controller
     public function index(Request $request)
     {
         $data['filter_exhb'] = null;
-        $cards = Card::query()->with(['exhibitions','cardcountry','emails','phone']);
+        $cards = Cards::query()->with(['exhibitions','cardcountry','emails','phone']);
         if ($request->exhb)
         {
             $data['filter_exhb'] = $request->exhb;
