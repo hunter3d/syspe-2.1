@@ -111,6 +111,10 @@ class Events extends Model {
         return $this->belongsTo( Exhibition::class );
     }
 
+    public function answers(): HasMany {
+        return $this->hasMany( Answers::class );
+    }
+
     public function orders(): HasMany {
         return $this->hasMany( Orders::class, 'event_id', 'id' );
     }
