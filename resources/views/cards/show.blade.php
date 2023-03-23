@@ -89,7 +89,7 @@
                         </tr>
                         <tr>
                             <td class="text-end text-muted">Страна:</td>
-                            <td>{{ $card->cardcountry->name_ru }}</td>
+                            <td>{{ $card->country->name_ru }}</td>
                         </tr>
                         <tr>
                             <td class="text-end text-muted">Область:</td>
