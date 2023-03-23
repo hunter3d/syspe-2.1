@@ -1,17 +1,20 @@
 <?php
 
 use App\Http\Controllers\AnsweroptionsController;
+use App\Http\Controllers\AnswersController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\Config\LogsController;
 use App\Http\Controllers\Config\RolesController;
 use App\Http\Controllers\Config\StaffController;
+use App\Http\Controllers\DebugController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ExhibitionsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PromocodesController;
 use App\Http\Controllers\QuestionnairesController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\ScanerController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\TopicsController;
@@ -413,3 +416,75 @@ Route::prefix('visitors')->group(function () {
         ->middleware('allow:visitors')
         ->name('visitors');
 });
+
+// CARDS
+Route::prefix('cards')->group(function () {
+    Route::get('/index', [CardsController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:cards')
+        ->name('cards');
+
+    Route::get('/show/{id}', [CardsController::class, 'show'])
+        ->middleware('auth')
+        ->middleware('allow:cards')
+        ->name('cards.show');
+    Route::post('/addcomment/{id}', [CardsController::class, 'addcomment'])
+        ->middleware('auth')
+        ->middleware('allow:cards addcomment')
+        ->name('cards.addcomment');
+    Route::get('/delcomment/{id}', [CardsController::class, 'delcomment'])
+        ->middleware('auth')
+        ->middleware('allow:cards delcomment')
+        ->name('cards.delcomment');
+    Route::get('/edit/{id}', [CardsController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit')
+        ->name('cards.edit');
+    Route::post('/edit/{id}', [CardsController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit')
+        ->name('cards.update');
+    Route::get('/delete/{id}', [CardsController::class, 'delete'])
+        ->middleware('auth')
+        ->middleware('allow:cards delete')
+        ->name('cards.delete');
+    Route::post('/addphone/{id}', [CardsController::class, 'addphone'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+    Route::get('/delphone/{id}', [CardsController::class, 'delphone'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+    Route::post('/addemail/{id}', [CardsController::class, 'addemail'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+    Route::get('/delemail/{id}/{visitor_id}', [CardsController::class, 'delemail'])
+        ->middleware('auth')
+        ->middleware('allow:cards edit');
+});
+
+// ANSWERS
+Route::prefix('answers')->group(function () {
+    Route::get('/index', [AnswersController::class, 'index'])
+        ->middleware('auth')
+        ->middleware('allow:answers')
+        ->name('answers');
+    Route::get('/show/{event_id}', [AnswersController::class, 'show'])
+        ->middleware('auth')
+        ->middleware('allow:answers')
+        ->name('answers.show');
+    Route::get('/showcard/{event_id}', [AnswersController::class, 'showcard'])
+        ->middleware('auth')
+        ->middleware('allow:answers')
+        ->name('answers.showcard');
+});
+
+// REPORTS
+Route::prefix('reports')->group(function () {
+    Route::get('/notickets', [ReportsController::class, 'notickets'])
+        ->middleware('auth')
+        ->middleware('allow:reports')
+        ->name('reports.notickets');
+});
+
+// DEBUG
+Route::get('debug', [DebugController::class, 'index']);

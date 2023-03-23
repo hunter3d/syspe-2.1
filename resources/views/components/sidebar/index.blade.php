@@ -22,13 +22,13 @@
                 </li>
             @endcan
 
-{{--            @can('answers')--}}
-{{--                <li>--}}
-{{--                    <a href="/answers/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-question-square fa-fw text-primary"></i>&nbsp;Анкеты--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('answers')
+                <li>
+                    <a href="/answers/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-question-square fa-fw text-primary"></i>&nbsp;Анкеты
+                    </a>
+                </li>
+            @endcan
 
             @can('visitors')
                 <li>
@@ -38,13 +38,13 @@
                 </li>
             @endcan
 
-{{--            @can('cards')--}}
-{{--                <li>--}}
-{{--                    <a href="/cards/index" class="d-inline-flex align-items-center rounded">--}}
-{{--                        <i class="fal fa-address-card fa-fw text-primary"></i>&nbsp;Карточки--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('cards')
+                <li>
+                    <a href="/cards/index" class="d-inline-flex align-items-center rounded">
+                        <i class="fal fa-address-card fa-fw text-primary"></i>&nbsp;Карточки
+                    </a>
+                </li>
+            @endcan
 
             @can('topics')
                 <li>
@@ -94,24 +94,24 @@
                 </li>
             @endcan
 
-{{--            @can('reports')--}}
-{{--                <li class="mb-1">--}}
-{{--                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#report-collapse" aria-expanded="false">--}}
-{{--                        <i class="fal fa-folders fa-fw text-primary"></i>&nbsp;Отчеты--}}
-{{--                    </button>--}}
-{{--                    <div class="collapse" id="report-collapse">--}}
-{{--                        <ul class="list-unstyled fw-normal pb-1 small">--}}
-{{--                            @can('reports')--}}
-{{--                                <li>--}}
-{{--                                    <a href="/reports/notickets" class="d-inline-flex align-items-center rounded">--}}
-{{--                                        <i class="fal fa-fw fa-file-chart-line"></i>&nbsp;<span>Без заказов билетов</span>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            @endcan--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--            @endcan--}}
+            @can('reports')
+                <li class="mb-1">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#report-collapse" aria-expanded="false">
+                        <i class="fal fa-folders fa-fw text-primary"></i>&nbsp;Отчеты
+                    </button>
+                    <div class="collapse" id="report-collapse">
+                        <ul class="list-unstyled fw-normal pb-1 small">
+                            @can('reports')
+                                <li>
+                                    <a href="/reports/notickets" class="d-inline-flex align-items-center rounded">
+                                        <i class="fal fa-fw fa-file-chart-line"></i>&nbsp;<span>Без заказов билетов</span>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </div>
+                </li>
+            @endcan
 
             @can('config')
             <li class="mb-1">
