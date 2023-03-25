@@ -111,15 +111,19 @@ class Events extends Model {
         return $this->belongsTo( Exhibition::class );
     }
 
+    public function answers(): HasMany {
+        return $this->hasMany( Answers::class, 'event_id', 'id' );
+    }
+
     public function orders(): HasMany {
-        return $this->hasMany( Orders::class );
+        return $this->hasMany( Orders::class, 'event_id', 'id' );
     }
 
     public function promocodes(): HasMany {
-        return $this->hasMany( Promocodes::class );
+        return $this->hasMany( Promocodes::class, 'event_id', 'id' );
     }
 
     public function tickets(): HasMany {
-        return $this->hasMany( Tickets::class );
+        return $this->hasMany( Tickets::class, 'event_id', 'id' );
     }
 }

@@ -5,7 +5,7 @@
                 <h1 class="h3 mb-3"><i class="fal fa-fw fa-calendar-check text-secondary"></i>&nbsp;Мероприятия</h1>
             </div>
             <div class="col-auto ms-auto text-end">
-                <a href="{{ route('dashboard') }}" class="btn btn-secondary">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">
                     <i class="fal fa-fw fa-backward"></i>
                 </a>
                 <a href="/events/add" class="btn btn-primary">
@@ -23,12 +23,21 @@
                             <tr>
                                 <th class="text-nowrap" scope="col">@sortablelink('id','#')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('exhibition.name','Выставка')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('name_ua','Название RU')</th>
-                                <th class="text-nowrap" scope="col">@sortablelink('description_ua','Описание RU')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('name_ru','Название RU')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('description_ru','Описание RU')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('location_ru','Место проведения RU')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Начало')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('start','Конец')</th>
 
-                                <th class="text-nowrap" scope="col">@sortablelink('price','ГРН')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('can_promo','promo')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('can_card','card')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('can_invoice','invoice')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_uah',new Illuminate\Support\HtmlString('<i class="fal fa-hryvnia"></i>'))</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_euro',new Illuminate\Support\HtmlString('<i class="fal fa-euro-sign"></i>'))</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('pay_usd',new Illuminate\Support\HtmlString('<i class="fal fa-dollar-sign"></i>'))</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_uah','Грн')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_euro','Евро')</th>
+                                <th class="text-nowrap" scope="col">@sortablelink('price_usd','Usd')</th>
                                 <th class="text-nowrap" scope="col">@sortablelink('template','Ч')</th>
                                 <th class="text-nowrap" scope="col"><i class="fal fa-fw fa-brackets"></i></th>
                                 <th class="text-nowrap" scope="col"></th>
@@ -43,10 +52,19 @@
                                     <td>{{ $event->exhibition->name }}</td>
                                     <td>{{ $event->name_ru }}</td>
                                     <td>{{ $event->description_ru }}</td>
+                                    <td>{{ $event->location_ru }}</td>
                                     <td>{{ $event->start }}</td>
                                     <td>{{ $event->stop }}</td>
 
-                                    <td>{{ $event->price }}</td>
+                                    <td><i class="fal {{ $event->can_promo==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->can_card==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->can_invoice==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_uah==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_euro==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td><i class="fal {{ $event->pay_usd==1?'fa-plus text-success':'fa-minus text-danger' }}"></i></td>
+                                    <td>{{ $event->price_uah }}</td>
+                                    <td>{{ $event->price_euro }}</td>
+                                    <td>{{ $event->price_usd }}</td>
                                     @if ($event->template == 0)
                                         <td class="text-success"><i class="fal fa-fw fa-unlock"></i></td>
                                     @else

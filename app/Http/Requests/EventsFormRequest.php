@@ -11,7 +11,7 @@ use Intervention\Image\Facades\Image;
 class EventsFormRequest extends FormRequest {
     public function rules(): array {
         return [
-            'exhbition_id'      => ['required','numeric'],
+            'exhibition_id'      => ['required','numeric'],
             'name_uk'           => ['required','string'],
             'name_ru'           => ['required','string'],
             'name_en'           => ['required','string'],
@@ -25,12 +25,12 @@ class EventsFormRequest extends FormRequest {
             'ticket_temp'       => ['nullable','image','mimes:jpeg,png,jpg'],
             'start'             => ['required','date_format:"Y-m-d H:i"'],
             'stop'              => ['required','date_format:"Y-m-d H:i"'],
-            'can_promo'         => ['required','numeric'],
-            'can_card'          => ['required','numeric'],
-            'can_invoice'       => ['required','numeric'],
-            'pay_uah'           => ['required','numeric'],
-            'pay_euro'          => ['required','numeric'],
-            'pay_usd'           => ['required','numeric'],
+            'can_promo'         => ['numeric'],
+            'can_card'          => ['numeric'],
+            'can_invoice'       => ['numeric'],
+            'pay_uah'           => ['numeric'],
+            'pay_euro'          => ['numeric'],
+            'pay_usd'           => ['numeric'],
             'price_uah'         => ['required','numeric'],
             'price_euro'        => ['required','numeric'],
             'price_usd'         => ['required','numeric'],
@@ -41,7 +41,7 @@ class EventsFormRequest extends FormRequest {
     public function attributes(): array
     {
         return [
-            'exhbition_id'      => 'Выставка',
+            'exhibition_id'      => 'Выставка',
             'name_uk'           => 'Название на украинском',
             'name_ru'           => 'Название на русском',
             'name_en'           => 'Название на английском',
@@ -128,7 +128,7 @@ class EventsFormRequest extends FormRequest {
 
         // add data to DB
         $ev = Events::create([
-            'exhibition_id'     => $this->input('exhbition_id'),
+            'exhibition_id'     => $this->input('exhibition_id'),
             'name_uk'           => $this->input('name_uk'),
             'name_ru'           => $this->input('name_ru'),
             'name_en'           => $this->input('name_en'),
@@ -144,12 +144,12 @@ class EventsFormRequest extends FormRequest {
             'ticket_temp_name'  => $ticket_temp_name,
             'start'             => $this->input('start'),
             'stop'              => $this->input('stop'),
-            'can_promo'         => $this->input('can_promo'),
-            'can_card'          => $this->input('can_card'),
-            'can_invoice'       => $this->input('can_invoice'),
-            'pay_uah'           => $this->input('pay_uah'),
-            'pay_euro'          => $this->input('pay_euro'),
-            'pay_usd'           => $this->input('pay_usd'),
+            'can_promo'         => $this->input('can_promo')?$this->input('can_promo'):0,
+            'can_card'          => $this->input('can_card')?$this->input('can_card'):0,
+            'can_invoice'       => $this->input('can_invoice')?$this->input('can_invoice'):0,
+            'pay_uah'           => $this->input('pay_uah')?$this->input('pay_uah'):0,
+            'pay_euro'          => $this->input('pay_euro')?$this->input('pay_euro'):0,
+            'pay_usd'           => $this->input('pay_usd')?$this->input('pay_usd'):0,
             'price_uah'         => $this->input('price_uah'),
             'price_euro'        => $this->input('price_euro'),
             'price_usd'         => $this->input('price_usd'),
@@ -214,7 +214,7 @@ class EventsFormRequest extends FormRequest {
         }
 
         // Add to DB
-        $ev->exhibition_id      = $this->input('exhbition_id');
+        $ev->exhibition_id      = $this->input('exhibition_id');
         $ev->name_uk            = $this->input('name_uk');
         $ev->name_ru            = $this->input('name_ru');
         $ev->name_en            = $this->input('name_en');
@@ -226,12 +226,12 @@ class EventsFormRequest extends FormRequest {
         $ev->location_en        = $this->input('location_en');
         $ev->start              = $this->input('start');
         $ev->stop               = $this->input('stop');
-        $ev->can_promo          = $this->input('can_promo');
-        $ev->can_card           = $this->input('can_card');
-        $ev->can_invoice        = $this->input('can_invoice');
-        $ev->pay_uah            = $this->input('pay_uah');
-        $ev->pay_euro           = $this->input('pay_euro');
-        $ev->pay_usd            = $this->input('pay_usd');
+        $ev->can_promo          = $this->input('can_promo')?$this->input('can_promo'):0;
+        $ev->can_card           = $this->input('can_card')?$this->input('can_card'):0;
+        $ev->can_invoice        = $this->input('can_invoice')?$this->input('can_invoice'):0;
+        $ev->pay_uah            = $this->input('pay_uah')?$this->input('pay_uah'):0;
+        $ev->pay_euro           = $this->input('pay_euro')?$this->input('pay_euro'):0;
+        $ev->pay_usd            = $this->input('pay_usd')?$this->input('pay_usd'):0;
         $ev->price_uah          = $this->input('price_uah');
         $ev->price_euro         = $this->input('price_euro');
         $ev->price_usd          = $this->input('price_usd');

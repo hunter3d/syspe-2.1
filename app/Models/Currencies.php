@@ -17,6 +17,6 @@ class Currencies extends Model
     ];
 
     public function orders(): HasMany {
-        return $this->hasMany( Orders::class );
+        return $this->hasMany( Orders::class, 'currency_id','id' );
     }
 }

@@ -22,6 +22,7 @@ class EventsSeeder extends Seeder
         $events = DB::connection('mysql_old')->table('events')->get();
         foreach ($events as $event) {
             $ev = Events::create([
+                'id'                => $event->id,
                 'exhibition_id'     => $event->exhibition_id,
                 'name_uk'           => $event->name_ua,
                 'name_ru'           => $event->name_ru,

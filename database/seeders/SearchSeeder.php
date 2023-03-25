@@ -19,10 +19,10 @@ class SearchSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::findByName('Developer');
-        $perm = Permission::create(['name'=>'search cards']);
-        $role->givePermissionTo($perm);
-        $perm = Permission::create(['name'=>'search logs']);
-        $role->givePermissionTo($perm);
+        //$role = Role::findByName('Developer');
+        //$perm = Permission::create(['name'=>'search cards']);
+        //$role->givePermissionTo($perm);
+        //$perm = Permission::create(['name'=>'search logs']);
+        //$role->givePermissionTo($perm);
     }
 }

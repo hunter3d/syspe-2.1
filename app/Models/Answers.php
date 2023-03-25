@@ -39,4 +39,8 @@ class Answers extends Model
     public function exhibition(): BelongsTo {
         return $this->belongsTo( Exhibition::class);
     }
+
+    public function event(): BelongsTo {
+        return $this->belongsTo( Events::class );
+    }
 }

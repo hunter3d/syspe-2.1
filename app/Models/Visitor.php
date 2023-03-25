@@ -71,7 +71,7 @@ class Visitor extends Authenticatable implements MustVerifyEmail
     ];
 
     public function card(): HasOne {
-        return $this->hasOne( Card::class );
+        return $this->hasOne( Cards::class );
     }
 
     public function order(): HasMany {
