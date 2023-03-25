@@ -22,4 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('auth')->group(function () {
     Route::post('/login',[ AuthController::class, 'login' ])
         ->middleware('localization');
+    Route::get('/logout',[AuthController::class, 'destroy'])
+        ->middleware('localization')
+        ->middleware('auth:sanctum');
 });
