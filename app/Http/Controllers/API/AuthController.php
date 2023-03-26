@@ -33,9 +33,15 @@ class AuthController extends Controller {
             Auth::guard( 'api' )->logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();
-            return response()->json( [ 'status' => true, 'message' => 'User Logged Out Successfully', ], 200 );
+            return response()->json( [
+                'status' => true,
+                'message' => 'User Logged Out Successfully',
+                ], 200 );
         } else { // user is not loggedIN
-            return response()->json( [ 'status' => false, 'message' => 'LOGOUT: false. User not Logged in', ], 422 );
+            return response()->json( [
+                'status' => false,
+                'message' => 'LOGOUT: false. User not Logged in',
+                ], 422 );
         }
     }
 
