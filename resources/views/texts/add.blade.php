@@ -1,8 +1,8 @@
-<x-app head-title="Создать мероприятие">
+<x-app head-title="Создать текст">
     <div class="container-fluid">
         <div class="row">
             <div class="col-auto">
-                <h1 class="h3 mb-3"><i class="fal fa-fw fa-calendar-check text-secondary"></i>&nbsp;Создать мероприятие</h1>
+                <h1 class="h3 mb-3"><i class="fal fa-fw fa-file-alt text-secondary"></i>&nbsp;Создать текст</h1>
             </div>
             <div class="col-auto ms-auto text-end">
                 <a href="{{ url()->previous() }}" class="btn btn-secondary">
