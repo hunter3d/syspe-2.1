@@ -27,4 +27,6 @@ Route::prefix('auth')->group(function () {
         ->middleware('auth:sanctum');
     Route::post('/remember',[AuthController::class, 'remember'])
         ->middleware('localization');
+    Route::post('/recovery',[AuthController::class,'recovery'])
+        ->middleware('localization');
 });

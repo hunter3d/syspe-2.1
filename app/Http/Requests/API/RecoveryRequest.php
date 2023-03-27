@@ -13,9 +13,7 @@ use Illuminate\Support\Str;
 
 class RecoveryRequest extends FormRequest {
     public function rules(): array {
-        return [
-            'token' => ['required','string']
-        ];
+        return [ 'token' => [ 'required', 'string' ] ];
     }
 
     public function authorize(): bool {
@@ -23,19 +21,18 @@ class RecoveryRequest extends FormRequest {
     }
 
     public function check() {
-        $out = VisitorsReset::where('token',$this->input('token'))->first();
+        $out = VisitorsReset::where( 'token', $this->input( 'token' ) )->first();
         if ( $out ) { //request exist
-            $visitor = Visitor::where('email',$out->email)->first();
+            $visitor = Visitor::where( 'email', $out->email )->first();
             if ( $visitor ) {
-                $password = Str::random(12);
+                $password = Str::random( 12 );
                 $visitor->password = Hash::make( $password );
                 $visitor->save();
                 $data['email'] = $visitor->email;
                 $data['password'] = $password;
                 // mail
-                Mail::to($visitor->email)->send(new RecoveredMail($data));
+                Mail::to( $visitor->email )->send( new RecoveredMail( $data ) );
                 $out->delete();
-
                 return true;
             }
         }

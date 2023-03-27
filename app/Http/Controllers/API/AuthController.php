@@ -74,11 +74,10 @@ class AuthController extends Controller {
 
     public function recovery( RecoveryRequest $request ) {
         $request = $request->check();
-
         if ( !$request ) {
             return response()->json( [ 'status' => false, ], 200 );
         } else {
-            return response()->json( [ 'status' => $request->email, ], 200 );
+            return response()->json( [ 'status' => true, ], 200 );
         }
 
     }
