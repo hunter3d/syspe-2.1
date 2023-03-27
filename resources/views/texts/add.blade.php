@@ -32,7 +32,8 @@
                                     menubar: "false",
                                     plugins: 'advlist link lists',
                                     toolbar: 'undo redo | styles | bold italic | bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | outdent indent',
-                                    promotion: false
+                                    promotion: false,
+                                    language: 'ru'
                                 });
                             </script>
                         </div>
