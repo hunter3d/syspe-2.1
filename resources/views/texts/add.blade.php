@@ -28,7 +28,8 @@
                             </div>
                             <script>
                                 tinymce.init({
-                                    selector: 'textarea#text_uk'
+                                    selector: 'textarea#text_uk',
+                                    menubar: "false"
                                 });
                             </script>
                         </div>
