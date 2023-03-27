@@ -21,6 +21,10 @@
                                 <label for="name" class="form-label">Краткое описание</label>
                                 <input name="name" type="text" class="form-control" id="name" required>
                             </div>
+                            <div class="col-12 mb-4">
+                                <label for="text_uk" class="form-label">Текст на украинском</label>
+                                <textarea name="text_uk" class="form-control" id="text_uk" rows="10" required></textarea>
+                            </div>
                         </div>
                     </form>
                 </div>
