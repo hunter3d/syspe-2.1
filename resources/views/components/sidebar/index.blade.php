@@ -113,14 +113,6 @@
                 </li>
             @endcan
 
-            @can('texts')
-                <li>
-                    <a href="/texts/index" class="d-inline-flex align-items-center rounded">
-                        <i class="fal fa-file-alt fa-fw text-primary"></i>&nbsp;Тексты
-                    </a>
-                </li>
-            @endcan
-
             @can('config')
             <li class="mb-1">
                 <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
