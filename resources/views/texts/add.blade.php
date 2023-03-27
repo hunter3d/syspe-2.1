@@ -31,7 +31,7 @@
                                     selector: 'textarea#text_uk',
                                     menubar: "false",
                                     plugins: 'advlist link lists',
-                                    toolbar: 'undo redo | styles | bold italic | lists alignleft aligncenter alignright alignjustify | outdent indent'
+                                    toolbar: 'undo redo | styles | bold italic | list | alignleft aligncenter alignright alignjustify | outdent indent'
                                 });
                             </script>
                         </div>
