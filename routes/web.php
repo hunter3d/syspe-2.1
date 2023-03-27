@@ -16,6 +16,7 @@ use App\Http\Controllers\PromocodesController;
 use App\Http\Controllers\QuestionnairesController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\ScanerController;
+use App\Http\Controllers\TextsController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\VisitorsController;
@@ -35,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])
     ->middleware('auth')
     ->name('dashboard');
-
+// MESSAGES
 Route::prefix('messages')->group(function () {
     Route::get('/add', [MainController::class, 'create'])
         ->middleware('auth')
@@ -51,6 +52,34 @@ Route::prefix('messages')->group(function () {
         ->name('messages.update');
     Route::get('/delete/{id}', [MainController::class, 'destroy'])
         ->middleware('auth')
+        ->name('messages.destroy');
+});
+
+// TEXTS
+Route::prefix('texts')->group(function () {
+    Route::get('/index',[TextsController::class,'index'])
+        ->middleware('auth')
+        ->middleware('allow:texts')
+        ->name('texts');
+    Route::get('/add', [TextsController::class, 'create'])
+        ->middleware('auth')
+        ->middleware('allow:texts create')
+        ->name('messages.create');
+    Route::post('/add', [TextsController::class, 'store'])
+        ->middleware('auth')
+        ->middleware('allow:texts store')
+        ->name('messages.store');
+    Route::get('/edit/{id}', [TextsController::class, 'edit'])
+        ->middleware('auth')
+        ->middleware('allow:texts edit')
+        ->name('messages.create');
+    Route::post('/edit/{id}', [TextsController::class, 'update'])
+        ->middleware('auth')
+        ->middleware('allow:texts update')
+        ->name('messages.update');
+    Route::get('/delete/{id}', [TextsController::class, 'destroy'])
+        ->middleware('auth')
+        ->middleware('allow:texts destroy')
         ->name('messages.destroy');
 });
 
