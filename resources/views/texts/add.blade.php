@@ -21,10 +21,16 @@
                                 <label for="name" class="form-label">Краткое описание</label>
                                 <input name="name" type="text" class="form-control" id="name" required>
                             </div>
+                            <script src="/js/tinymce/tinymce.min.js"></script>
                             <div class="col-12 mb-4">
                                 <label for="text_uk" class="form-label">Текст на украинском</label>
                                 <textarea name="text_uk" class="form-control" id="text_uk" rows="10" required></textarea>
                             </div>
+                            <script>
+                                tinymce.init({
+                                    selector: 'textarea#text_uk'
+                                });
+                            </script>
                         </div>
                     </form>
                 </div>
