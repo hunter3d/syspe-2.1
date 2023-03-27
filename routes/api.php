@@ -25,6 +25,6 @@ Route::prefix('auth')->group(function () {
     Route::get('/logout',[AuthController::class, 'destroy'])
         ->middleware('localization')
         ->middleware('auth:sanctum');
-    Route::post('/remeber',[AuthController::class])
+    Route::post('/remember',[AuthController::class])
         ->middleware('localization');
 });
