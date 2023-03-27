@@ -30,8 +30,8 @@
                                 tinymce.init({
                                     selector: 'textarea#text_uk',
                                     menubar: "false",
-                                    plugins: 'advlist link lists'
-                                    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
+                                    plugins: 'advlist link lists',
+                                    toolbar: 'undo redo | styles | bold italic | lists alignleft aligncenter alignright alignjustify | outdent indent'
                                 });
                             </script>
                         </div>
