@@ -11,7 +11,7 @@ class TextsController extends Controller {
     }
 
     public function create() {
-
+        return view('texts.add');
     }
 
     public function store() {
