@@ -36,6 +36,34 @@
                                     language: 'ru'
                                 });
                             </script>
+                            <div class="col-12 mb-4">
+                                <label for="text_ru" class="form-label">Текст на русском</label>
+                                <textarea name="text_ru" class="form-control" id="text_ru" rows="10" required></textarea>
+                            </div>
+                            <script>
+                                tinymce.init({
+                                    selector: 'textarea#text_ru',
+                                    menubar: "false",
+                                    plugins: 'advlist link lists',
+                                    toolbar: 'undo redo | styles | bold italic | bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | outdent indent',
+                                    promotion: false,
+                                    language: 'ru'
+                                });
+                            </script>
+                            <div class="col-12 mb-4">
+                                <label for="text_en" class="form-label">Текст на английском</label>
+                                <textarea name="text_en" class="form-control" id="text_en" rows="10" required></textarea>
+                            </div>
+                            <script>
+                                tinymce.init({
+                                    selector: 'textarea#text_en',
+                                    menubar: "false",
+                                    plugins: 'advlist link lists',
+                                    toolbar: 'undo redo | styles | bold italic | bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | outdent indent',
+                                    promotion: false,
+                                    language: 'ru'
+                                });
+                            </script>
                         </div>
                     </form>
                 </div>
