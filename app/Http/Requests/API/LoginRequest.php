@@ -17,7 +17,6 @@ class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
-            'lang' => ['in:uk,ru,en'],
         ];
     }
 
@@ -34,7 +33,6 @@ class LoginRequest extends FormRequest
      */
     public function authenticate() {
         $this->ensureIsNotRateLimited();
-
         if (! Auth::guard('api')->attempt(array_merge($this->only('email', 'password'),['is_blocked'=>0]), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
             activity('VisitorAuth')->withProperties(['ip' => request()->ip()])->log('l:'.$this->email.' p:'.$this->password.' | Неудачная попытка входа в систему');
