@@ -14,6 +14,15 @@
                     <div class="card-header">
                         Создать новый текст
                     </div>
+                    <form action="/tickets/add" method="POST" enctype="multipart/form-data">
+                        <div class="card-body">
+                            @csrf
+                            <div class="col-12 mb-4">
+                                <label for="name" class="form-label">Краткое описание</label>
+                                <input name="name" type="text" class="form-control" id="name" required>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
