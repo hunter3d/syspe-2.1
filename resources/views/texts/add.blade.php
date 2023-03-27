@@ -29,8 +29,7 @@
                             <script>
                                 tinymce.init({
                                     selector: 'textarea#text_uk',
-                                    menubar: "false",
-                                    toolbar: 'undo redo styles bold italic alignleft aligncenter alignright alignjustify bullist numlist outdent indent'
+                                    menubar: "true",
                                 });
                             </script>
                         </div>
