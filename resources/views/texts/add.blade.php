@@ -29,7 +29,8 @@
                             <script>
                                 tinymce.init({
                                     selector: 'textarea#text_uk',
-                                    menubar: "true",
+                                    menubar: "false",
+                                    plugins: 'advlist link lists'
                                 });
                             </script>
                         </div>
