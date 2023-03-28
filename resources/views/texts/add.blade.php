@@ -14,7 +14,7 @@
                     <div class="card-header">
                         Создать новый текст
                     </div>
-                    <form action="/tickets/add" method="POST" enctype="multipart/form-data">
+                    <form action="/texts/add" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             @csrf
                             <div class="col-12 mb-4">
@@ -24,7 +24,7 @@
                             <script src="/js/tinymce/tinymce.min.js"></script>
                             <div class="col-12 mb-4">
                                 <label for="text_uk" class="form-label">Текст на украинском</label>
-                                <textarea name="text_uk" class="form-control" id="text_uk" rows="10" required></textarea>
+                                <textarea name="text_uk" class="form-control" id="text_uk" rows="10"></textarea>
                             </div>
                             <script>
                                 tinymce.init({
@@ -38,7 +38,7 @@
                             </script>
                             <div class="col-12 mb-4">
                                 <label for="text_ru" class="form-label">Текст на русском</label>
-                                <textarea name="text_ru" class="form-control" id="text_ru" rows="10" required></textarea>
+                                <textarea name="text_ru" class="form-control" id="text_ru" rows="10"></textarea>
                             </div>
                             <script>
                                 tinymce.init({
@@ -52,7 +52,7 @@
                             </script>
                             <div class="col-12 mb-4">
                                 <label for="text_en" class="form-label">Текст на английском</label>
-                                <textarea name="text_en" class="form-control" id="text_en" rows="10" required></textarea>
+                                <textarea name="text_en" class="form-control" id="text_en" rows="10"></textarea>
                             </div>
                             <script>
                                 tinymce.init({
@@ -64,6 +64,7 @@
                                     language: 'ru'
                                 });
                             </script>
+                            <button type="submit" class="btn btn-primary">Добавить</button>
                         </div>
                     </form>
                 </div>

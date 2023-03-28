@@ -2,6 +2,7 @@
 # (c) PremierExpo 2022-2023
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TextsFormRequest;
 use App\Models\Texts;
 
 class TextsController extends Controller {
@@ -14,19 +15,22 @@ class TextsController extends Controller {
         return view('texts.add');
     }
 
-    public function store() {
-
+    public function store( TextsFormRequest $request ) {
+        $request->store();
+        return redirect()->route('texts');
     }
 
-    public function edit() {
-
+    public function edit( $id ) {
+        $data['text'] = Texts::find( $id );
+        return view('texts.edit', $data );
     }
 
-    public function update() {
-
+    public function update( $id, TextsFormRequest $request ) {
+        $request->update( $id );
+        return redirect()->route('texts');
     }
 
     public function destroy() {
-
+        return redirect()->route('tickets');
     }
 }

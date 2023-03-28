@@ -34,9 +34,9 @@
                                 <tr>
                                     <td>{{ $text->id }}</td>
                                     <td>{{ $text->name }}</td>
-                                    <td>{{ Str::limit($text->text_ru,50) }}</td>
-                                    <td>{{ Str::limit($text->text_uk,50) }}</td>
-                                    <td>{{ Str::limit($text->text_en,50) }}</td>
+                                    <td>{{ Str::limit(htmlspecialchars_decode($text->text_ru),250) }}</td>
+                                    <td>{{ Str::limit(htmlspecialchars_decode($text->text_uk),250) }}</td>
+                                    <td>{{ Str::limit(htmlspecialchars_decode($text->text_en),250) }}</td>
                                     <td><a href="/texts/edit/{{$text->id}}"><i class="fal fa-fw fa-edit"></i></a></td>
                                 </tr>
                             @endforeach

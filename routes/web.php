@@ -46,7 +46,7 @@ Route::prefix('messages')->group(function () {
         ->name('messages.store');
     Route::get('/edit/{id}', [MainController::class, 'edit'])
         ->middleware('auth')
-        ->name('messages.create');
+        ->name('messages.edit');
     Route::post('/edit/{id}', [MainController::class, 'update'])
         ->middleware('auth')
         ->name('messages.update');
@@ -64,23 +64,23 @@ Route::prefix('texts')->group(function () {
     Route::get('/add', [TextsController::class, 'create'])
         ->middleware('auth')
         ->middleware('allow:texts create')
-        ->name('messages.create');
+        ->name('texts.create');
     Route::post('/add', [TextsController::class, 'store'])
         ->middleware('auth')
         ->middleware('allow:texts store')
-        ->name('messages.store');
+        ->name('texts.store');
     Route::get('/edit/{id}', [TextsController::class, 'edit'])
         ->middleware('auth')
         ->middleware('allow:texts edit')
-        ->name('messages.create');
+        ->name('texts.edit');
     Route::post('/edit/{id}', [TextsController::class, 'update'])
         ->middleware('auth')
         ->middleware('allow:texts update')
-        ->name('messages.update');
+        ->name('texts.update');
     Route::get('/delete/{id}', [TextsController::class, 'destroy'])
         ->middleware('auth')
         ->middleware('allow:texts destroy')
-        ->name('messages.destroy');
+        ->name('texts.destroy');
 });
 
 // AUTH
