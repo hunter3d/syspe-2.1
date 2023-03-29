@@ -38,5 +38,9 @@ Route::get('/texts/{id}',[ TextsController::class,'show'])
 
 Route::get('/exhibitions',[ ExhibitionsController::class,'index'])
     ->middleware('localization');
-//Route::get('/exhibition/{id}',[ ExhibitionsController::class,'show'])
-//    ->middleware('localization');
+
+Route::post('/email/not_exist',[AuthController::class,'ifNotExist'])
+    ->middleware('localization');
+
+Route::get('/topics/{id?}',[\App\Http\Controllers\API\TopicsController::class,'index'])
+    ->middleware('localization');
