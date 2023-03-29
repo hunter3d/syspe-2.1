@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CountriesController;
 use App\Http\Controllers\API\ExhibitionsController;
 use App\Http\Controllers\API\RegionsController;
+use App\Http\Controllers\API\RegistrationController;
 use App\Http\Controllers\API\TextsController;
 use App\Http\Controllers\API\TopicsController;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ Route::prefix('auth')->group(function () {
         ->middleware('localization');
     Route::post('/recovery',[AuthController::class,'recovery'])
         ->middleware('localization');
-    Route::post('/register',[ RegionsController::class,'store'])
+    Route::post('/register',[ RegistrationController::class,'store'])
         ->middleware('localization');
 });
 
