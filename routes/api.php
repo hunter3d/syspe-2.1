@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CountriesController;
 use App\Http\Controllers\API\ExhibitionsController;
+use App\Http\Controllers\API\RegionsController;
 use App\Http\Controllers\API\TextsController;
+use App\Http\Controllers\API\TopicsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,8 +45,11 @@ Route::get('/exhibitions',[ ExhibitionsController::class,'index'])
 Route::post('/email/not_exist',[AuthController::class,'ifNotExist'])
     ->middleware('localization');
 
-Route::get('/topics/{id?}',[\App\Http\Controllers\API\TopicsController::class,'index'])
+Route::get('/topics/{id?}',[ TopicsController::class,'index'])
     ->middleware('localization');
 
-Route::get('/countries',[\App\Http\Controllers\API\CountriesController::class,'index'])
+Route::get('/countries',[ CountriesController::class,'index'])
+    ->middleware('localization');
+
+Route::get('/regions',[ RegionsController::class,'index'])
     ->middleware('localization');
