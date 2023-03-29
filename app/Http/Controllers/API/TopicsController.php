@@ -12,9 +12,9 @@ class TopicsController extends Controller
     {
         $lang = App::currentLocale();
         if ($id != NULL) {
-            $topics = Topics::select('id','exhibition_id','name_'.$lang.' AS name','template','created_at'.'updated_at')->where('exhibition_id',$id)->where('template','0')->get();
+            $topics = Topics::select('id','exhibition_id','name_'.$lang.' AS name','template','created_at','updated_at')->where('exhibition_id',$id)->where('template','0')->get();
         } else {
-            $topics = Topics::select('id','exhibition_id','name_'.$lang.' AS name','template','created_at'.'updated_at')->where('template','0')->get();
+            $topics = Topics::select('id','exhibition_id','name_'.$lang.' AS name','template','created_at','updated_at')->where('template','0')->get();
         }
 
         return response()->json([
