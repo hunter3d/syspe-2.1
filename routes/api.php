@@ -34,6 +34,8 @@ Route::prefix('auth')->group(function () {
         ->middleware('localization');
     Route::post('/recovery',[AuthController::class,'recovery'])
         ->middleware('localization');
+    Route::post('/register',[ RegionsController::class,'store'])
+        ->middleware('localization');
 });
 
 Route::get('/texts/{id}',[ TextsController::class,'show'])
@@ -53,3 +55,4 @@ Route::get('/countries',[ CountriesController::class,'index'])
 
 Route::get('/regions',[ RegionsController::class,'index'])
     ->middleware('localization');
+
