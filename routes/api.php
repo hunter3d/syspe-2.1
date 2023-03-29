@@ -44,3 +44,6 @@ Route::post('/email/not_exist',[AuthController::class,'ifNotExist'])
 
 Route::get('/topics/{id?}',[\App\Http\Controllers\API\TopicsController::class,'index'])
     ->middleware('localization');
+
+Route::get('/countries',[\App\Http\Controllers\API\CountriesController::class,'index'])
+    ->middleware('localization');
