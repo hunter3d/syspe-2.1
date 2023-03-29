@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\ExhibitionsController;
 use App\Http\Controllers\API\TextsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,8 @@ Route::prefix('auth')->group(function () {
 
 Route::get('/texts/{id}',[ TextsController::class,'show'])
     ->middleware('localization');
+
+Route::get('/exhibitions',[ ExhibitionsController::class,'index'])
+    ->middleware('localisation');
+//Route::get('/exhibition/{id}',[ ExhibitionsController::class,'show'])
+//    ->middleware('localization');
