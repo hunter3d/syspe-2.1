@@ -37,6 +37,6 @@ Route::get('/texts/{id}',[ TextsController::class,'show'])
     ->middleware('localization');
 
 Route::get('/exhibitions',[ ExhibitionsController::class,'index'])
-    ->middleware('localisation');
+    ->middleware('localization');
 //Route::get('/exhibition/{id}',[ ExhibitionsController::class,'show'])
 //    ->middleware('localization');
