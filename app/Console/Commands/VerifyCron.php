@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Card;
-use App\Models\Emailcode;
+use App\Models\Cards;
+use App\Models\Emailcodes;
 use App\Models\Visitor;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
@@ -36,9 +36,9 @@ class VerifyCron extends Command
         foreach ($visitors as $visitor) {
             if (Carbon::parse($visitor->created_at)->addMinutes(30) < Carbon::now()) {
                 print 'Account '.$visitor->email.' --- removed after 30 min.';
-                $card = Card::where('visitor_id',$visitor->id)->first();
+                $card = Cards::where('visitor_id',$visitor->id)->first();
                 $card->delete();
-                $emailcode = Emailcode::where('visitor_id',$visitor->id)->first();
+                $emailcode = Emailcodes::where('visitor_id',$visitor->id)->first();
                 $emailcode->delete();
                 $visitor->delete();
             }

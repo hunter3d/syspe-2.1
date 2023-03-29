@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\PasswordResets;
+#use App\Models\PasswordResets;
 use App\Models\VisitorsReset;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
@@ -30,12 +30,12 @@ class RecoveryCron extends Command
      */
     public function handle()
     {
-        $rs = PasswordResets::query()->get();
-        foreach ($rs as $r) {
-            if (Carbon::parse($r->created_at)->addMinutes(15) < Carbon::now()) {
-                $r->delete();
-            }
-        }
+//        $rs = PasswordResets::query()->get();
+//        foreach ($rs as $r) {
+//            if (Carbon::parse($r->created_at)->addMinutes(15) < Carbon::now()) {
+//                $r->delete();
+//            }
+//        }
 
         $vs = VisitorsReset::query()->get();
         foreach ($vs as $v) {
