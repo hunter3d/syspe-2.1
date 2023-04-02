@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CountriesController;
+use App\Http\Controllers\API\EventsController;
 use App\Http\Controllers\API\ExhibitionsController;
 use App\Http\Controllers\API\RegionsController;
 use App\Http\Controllers\API\RegistrationController;
@@ -55,5 +56,8 @@ Route::get('/countries',[ CountriesController::class,'index'])
     ->middleware('localization');
 
 Route::get('/regions',[ RegionsController::class,'index'])
+    ->middleware('localization');
+
+Route::get('/events',[ EventsController::class,'index' ])
     ->middleware('localization');
 
