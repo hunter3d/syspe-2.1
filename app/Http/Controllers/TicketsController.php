@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
+use App\Models\Events;
 use App\Models\Exhibition;
 use App\Models\Tickets;
 use App\Models\Visitor;
@@ -13,7 +13,7 @@ class TicketsController extends Controller
 {
     public function index() {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
-        $data['events'] = Event::where('template',0)->get();
+        $data['events'] = Events::where('template',0)->get();
         $data['tickets'] = Tickets::sortable()->paginate(50);
         $data['total'] = $data['tickets']->total();
         return view('tickets.index', $data);
@@ -21,7 +21,7 @@ class TicketsController extends Controller
 
     public function exhibition( $id ) {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
-        $data['events'] = Event::where('template',0)->get();
+        $data['events'] = Events::where('template',0)->get();
         $data['tickets'] = Tickets::sortable()->where('exhibition_id',$id)->paginate(50);
         $data['total'] = $data['tickets']->total();
         $data['exhb'] = Exhibition::query()->find($id);
@@ -29,10 +29,10 @@ class TicketsController extends Controller
     }
     public function event( $id ) {
         $data['exhibitions'] = Exhibition::where('template',0)->get();
-        $data['events'] = Event::where('template',0)->get();
+        $data['events'] = Events::where('template',0)->get();
         $data['tickets'] = Tickets::sortable()->where('event_id',$id)->paginate(50);
         $data['total'] = $data['tickets']->total();
-        $data['evnt'] = Event::query()->find($id);
+        $data['evnt'] = Events::query()->find($id);
         return view('tickets.event', $data);
     }
 
