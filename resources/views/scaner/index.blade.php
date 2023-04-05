@@ -6,7 +6,7 @@
             </div>
             <div class="col-auto ms-auto text-end">
 
-                <a href="{{ url()->previous() }}" class="btn btn-secondary">
+                <a href="{{ route('dashboard') }}" class="btn btn-secondary">
                     <i class="fal fa-fw fa-backward"></i>
                 </a>
 
@@ -41,10 +41,13 @@
                 <div id="reader" width="320px" height="320"></div>
                 <div class="btn-group col-12 mt-3">
                     <a href="#" class="btn btn-primary col-6" onclick="doStart()">
-                        <i class="fal fa-fw fa-barcode"></i> Сканировать телефоном
+                        <i class="fal fa-fw fa-mobile-android"></i> Телефоном
                     </a>
                     <a href="#" class="btn btn-outline-primary col-6" onclick="doStartHard()">
-                        <i class="fal fa-fw fa-barcode"></i> Сканировать сканером
+                        <i class="fab fa-usb"></i> Сканером USB
+                    </a>
+                    <a href="#" class="btn btn-outline-primary col-6" onclick="doStartBluetooth()">
+                        <i class="fab fa-fw fa-bluetooth"></i> Сканером Bluetooth
                     </a>
                     <a href="#" class="btn btn-secondary col-6" onclick="doStop()">
                         <i class="fal fa-fw fa-stop"></i> Стоп и очистка
@@ -57,7 +60,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/html5-qrcode.min.js') }}"></script>
+    <script src="/js/html5-qrcode.min.js"></script>
     <script>
         let event_id = null;
         let code = null;
@@ -90,15 +93,53 @@
                 element.addEventListener('input', function () {
                     // input value
                     if (element.value.length === 13) {
+                        // next scan remove info version 2
+                        removeInfo();
+
                         //console.log(element.value);
                         code = element.value;
+                        //v2 doStopHard();
+                        showInfo(); console.log('show info function');
+
                         // сбрасываем значение
                         element.value = '';
-                        doStopHard();
-                        showInfo();
+                    } else {
+                        setTimeout(() => {
+                            element.value = '';
+                        },2500);
+                    }
+                });
+            }
+        }
+
+        function doStartBluetooth() {
+            if (event_id !== null && event_id != 0) {
+                removeInfo();
+                document.getElementById('hardreader').style.display = 'block';
+                document.getElementById('hardreader_input').focus();
+
+                var element = document.getElementById('hardreader_input');
+                element.addEventListener('input', function () {
+                    // input value
+                    if (element.value.length === 13) {
+                        // next scan remove info version 2
+                        removeInfo();
+
+                        //console.log(element.value);
+                        code = element.value;
+                        //v2 doStopHard();
+                        showInfo(); console.log('show info function');
+
+                        // сбрасываем значение
+                        element.value = '';
+                    } else {
+                        setTimeout(() => {
+                            element.value = '';
+                        },2500);
                     }
 
                 });
+
             }
         }
 
