@@ -118,6 +118,7 @@ class Cards extends Model
         ->toArray();
 
         $array['visitor']       = ($this->visitor?$this->visitor->toArray():null);
+        $array['tickets']       = ($this->visitor&&$this->visitor->tickets?$this->visitor->tickets->toArray():null);
         $array['topic']         = ($this->topic?$this->topic->toArray():null);
         $array['country']       = ($this->country?$this->country->toArray():null);
         $array['exhibitions']   = ($this->exhibitions?$this->exhibitions->toArray():null);
