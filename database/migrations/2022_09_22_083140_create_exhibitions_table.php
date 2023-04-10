@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
+            $table->string('url')->default('https://pe.com.ua');
             $table->string('logo_path')->nullable();
             $table->string('logo_name')->nullable();
             $table->integer('template')->default(0);
