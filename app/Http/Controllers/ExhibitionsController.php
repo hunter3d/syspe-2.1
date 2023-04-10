@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ExhibitionsFormRequest;
-use App\Models\Exhibition;
+use App\Models\Exhibitions;
 use Illuminate\Http\Request;
 
 class ExhibitionsController extends Controller {
     public function index( Request $request ) {
-        $exhibition = Exhibition::query();
+        $exhibition = Exhibitions::query();
         if ( isset( $request->status ) ) {
             $data['filter_status'] = ( $request->status == 0 ? 'Активные' : 'Черновики' );
             $exhibition = $exhibition->where( 'template', $request->status );
@@ -29,7 +29,7 @@ class ExhibitionsController extends Controller {
     }
 
     public function edit( $id ) {
-        $data['exhibition'] = Exhibition::find( $id );
+        $data['exhibition'] = Exhibitions::find( $id );
         return view( 'exhibitions.edit', $data );
     }
 
@@ -39,7 +39,7 @@ class ExhibitionsController extends Controller {
     }
 
     public function destroy( $id ) {
-        $exhb = Exhibition::find( $id );
+        $exhb = Exhibitions::find( $id );
         if ( count( $exhb->cards ) > 0 ) {
             return back()->with( 'error', 'Вы не можете удалить выставку. К данной выставке привязаны карточки посетителей. Для удаления отвяжите их от данной выставки.' );
         }
